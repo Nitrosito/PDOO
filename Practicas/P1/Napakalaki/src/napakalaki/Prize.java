@@ -27,4 +27,11 @@ public class Prize {
             return level;
     }
     
+    // DEBUG
+    public static void main(String[] args) {
+            Prize miPrize = new Prize(2,3);
+            System.out.println(miPrize.getTreasures());
+            System.out.println(miPrize.getLevel());
+    }
+    // DEBUG
 }
