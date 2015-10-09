@@ -60,17 +60,13 @@ public class BadConsequence {
 
     }
     
-    
-    
-    // DEBUG
-    public static void main(String[] args) {
-            BadConsequence miBadConsequence = new BadConsequence("Test",true);
-            System.out.println(miBadConsequence.getText());
-            System.out.println(miBadConsequence.getLevels());
-            System.out.println(miBadConsequence.getnHiddenTreasures());
-            System.out.println(miBadConsequence.getnVisibleTreasures());
-            System.out.println(miBadConsequence.getDeath());
+    public String toString(){
+        return "Badconsecuence; " + this.text + "Niveles: " + Integer.toString(this.levels) 
+                + "Tesoros Visibles " + Integer.toString(this.nVisibleTreasures) +
+                "Tesoros No Visibles " + Integer.toHexString(this.nHiddenTreasures) +
+                "Muerte " + this.death;
     }
-    // DEBUG
+    
+    
         
 }

@@ -15,7 +15,9 @@ public class PruebaNapakalaki {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+            Prize miPrize = new Prize(2,3);
+            System.out.println(miPrize.getTreasures());
+            System.out.println(miPrize.getLevel());
     }
     
 }

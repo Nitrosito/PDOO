@@ -27,11 +27,8 @@ public class Prize {
             return level;
     }
     
-    // DEBUG
-    public static void main(String[] args) {
-            Prize miPrize = new Prize(2,3);
-            System.out.println(miPrize.getTreasures());
-            System.out.println(miPrize.getLevel());
+    public String toString(){
+            return "Tesoros:" + this.treasures + "Nivel:" + this.level;
     }
-    // DEBUG
+
 }
