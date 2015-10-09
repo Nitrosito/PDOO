@@ -4,12 +4,16 @@
  * and open the template in the editor.
  */
 package napakalaki;
+import java.util.ArrayList;
 
 /**
  *
  * @author nitrosito
  */
 public class BadConsequence {
+    private ArrayList<TreasureKind> specificHiddenTreasures= new ArrayList();
+    private ArrayList<TreasureKind> specificVisibleTreasures= new ArrayList();
+
     private String text;
     private int levels;
     private int nVisibleTreasures;
@@ -23,7 +27,7 @@ public class BadConsequence {
             this.nHiddenTreasures=nHidden;
     }
     
-    public BadConsequence(String text,boolean death ){
+    public BadConsequence(String text,boolean death){
         this.text=text;
         this.death=death;
     }
@@ -35,5 +39,38 @@ public class BadConsequence {
     public int getLevels(){
             return levels;
     }
+    
+    public int getnVisibleTreasures(){
+        return nVisibleTreasures;
+    }
+    
+    public int getnHiddenTreasures(){
+        return nHiddenTreasures;
+    }
+    
+    public boolean getDeath(){
+        return death;
+    }
+
+    public BadConsequence(String text, int levels, ArrayList<TreasureKind> tVisible, ArrayList<TreasureKind> tHidden) {
+        this.text=text;
+        this.levels=levels;
+        this.specificVisibleTreasures=tVisible;
+        this.specificHiddenTreasures=tHidden;
+
+    }
+    
+    
+    
+    // DEBUG
+    public static void main(String[] args) {
+            BadConsequence miBadConsequence = new BadConsequence("Test",true);
+            System.out.println(miBadConsequence.getText());
+            System.out.println(miBadConsequence.getLevels());
+            System.out.println(miBadConsequence.getnHiddenTreasures());
+            System.out.println(miBadConsequence.getnVisibleTreasures());
+            System.out.println(miBadConsequence.getDeath());
+    }
+    // DEBUG
         
 }
