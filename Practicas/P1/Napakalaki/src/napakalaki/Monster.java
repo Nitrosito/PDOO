@@ -34,7 +34,7 @@ public class Monster {
     }
     
     public String toString(){
-        return "Monstruo; Nombre:" + this.name + "Nivel combate" + Integer.toString(combatLevel)+ this.prize.toString() +
+        return "Nombre Monstruo:" + this.name + "; Nivel combate " + Integer.toString(combatLevel)+ this.prize.toString() +
                 this.badconsecuence.toString();
     }
 }

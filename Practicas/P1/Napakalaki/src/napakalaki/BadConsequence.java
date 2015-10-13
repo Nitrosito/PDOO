@@ -61,10 +61,10 @@ public class BadConsequence {
     }
     
     public String toString(){
-        return "Badconsecuence; " + this.text + "Niveles: " + Integer.toString(this.levels) 
-                + "Tesoros Visibles " + Integer.toString(this.nVisibleTreasures) +
-                "Tesoros No Visibles " + Integer.toHexString(this.nHiddenTreasures) +
-                "Muerte " + this.death;
+        return "; Nombre mala consecuencia:" + this.text + "; Niveles:" + Integer.toString(this.levels) 
+                + "; Tesoros Visibles:" + Integer.toString(this.nVisibleTreasures) +
+                "; Tesoros No Visibles:" + Integer.toHexString(this.nHiddenTreasures) +
+                "; Muerte:" + this.death;
     }
     
     
