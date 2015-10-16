@@ -46,6 +46,22 @@ public class PruebaNapakalaki {
             
                     prize = new Prize(4,1);
                     monstruos.add(new Monster("Angeles de la noche ibicenca",14,badConsequence,prize));
+                    
+                    
+                // Byakhees de bonanza
+            badConsequence = new BadConsequence("Pierdes tu armadura visible y otra oculta", 0,
+                    new ArrayList(Arrays.asList(TreasureKind.ARMOR)),
+                    new ArrayList(Arrays.asList(TreasureKind.ARMOR)));
+            prize=new Prize(2, 1);
+            monstruos.add(new Monster("Byakhess de bonanza", 8, badConsequence, prize));
+            
+                // Chibithulhu
+            badConsequence = new BadConsequence("Embobados con el lindo primigenio te descartas de tu casco visible"
+                ,0,new ArrayList(Arrays.asList(TreasureKind.HELMET)),null);
+                    
+            
+            
+            
                             
     }
     
