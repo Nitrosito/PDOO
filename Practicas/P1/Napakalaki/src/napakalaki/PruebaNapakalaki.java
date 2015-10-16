@@ -24,6 +24,7 @@ public class PruebaNapakalaki {
             //System.out.println(miPrize.getTreasures());
             //System.out.println(miPrize.getLevel());
             System.out.print(Mimonstruo.toString()); // Testeando todos los tostring
+            // probando git, soy nico
     }
     
 }
