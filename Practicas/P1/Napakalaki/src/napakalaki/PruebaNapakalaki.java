@@ -153,7 +153,10 @@ public class PruebaNapakalaki {
             monstruos.add(new Monster("Bicéfalo",20,badConsequence,prize));
            
             
-            
+            for(int i=0; i<19;i++){
+                System.out.print(monstruos.get(i));
+                System.out.print("\n\n\n\n");
+            }
     }
     
 }
