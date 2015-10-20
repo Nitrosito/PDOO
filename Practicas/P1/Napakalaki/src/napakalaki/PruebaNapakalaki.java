@@ -18,46 +18,47 @@ public class PruebaNapakalaki {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-            //Monstruo de prueba
-            //Prize miPrize = new Prize(2,3); // Creo premio        
-            //BadConsequence mibc = new BadConsequence("Muerte subita",3,0,0);// Creo mala consecuencia
+        
+       /* PROBADO DE METODOS DE CREACIÓN Y TOSTRING
+            Prize miPrize = new Prize(2,3); // Creo premio        
+            BadConsequence mibc = new BadConsequence("Muerte subita",3,0,0);// Creo mala consecuencia
             
-            //Monster Mimonstruo = new Monster("Atún",10,mibc,miPrize);// Creo Monstruo
-            //System.out.println(miPrize.getTreasures());
-            //System.out.println(miPrize.getLevel());
-            //System.out.print(Mimonstruo.toString()); // Testeando todos los tostring
+            Monster Mimonstruo = new Monster("Atún",10,mibc,miPrize);// Creo Monstruo
+            System.out.println(miPrize.getTreasures());
+            System.out.println(miPrize.getLevel());
+            System.out.print(Mimonstruo.toString()); // Testeando todos los tostring
+        */
+        
+            ArrayList<Monster> monstruos = new ArrayList(); // Array de monstruos
             
-            //System.out.print("\n");
+            // AÑADIENDO CARTAS
             
-            ArrayList<Monster> monstruos = new ArrayList();
-            
-            //El rey de rosa
+                // El rey de rosa
             BadConsequence badConsequence = new BadConsequence("Pierdes 5 niveles y 3 tesoros visibles",5,3,0);
             Prize prize = new Prize(4,2);
-            monstruos.add(new Monster("El rey de rosa", 14, badConsequence, prize));
+            monstruos.add(new Monster("El rey de rosa",13,badConsequence,prize));
             
-            
-            // Angeles de la noche ibicenca
+                // Angeles de la noche ibicenca
             badConsequence = new BadConsequence("Te atrapan para llevarte de fiesta y te dejan"
-                     + "caer en mitad del vuelo. Descarta 1 mano visible y 1 mano oculta",0,
-                     new ArrayList(Arrays.asList(TreasureKind.ONEHAND)),
-                     new ArrayList(Arrays.asList(TreasureKind.ONEHAND)));
-             
-            prize = new Prize(4,1);
-                     monstruos.add(new Monster("Angeles de la noche ibicenca",14,badConsequence,prize));
-                     
-                     
-            // Byakhees de bonanza
+                    + "caer en mitad del vuelo. Descarta 1 mano visible y 1 mano oculta",0,
+                    new ArrayList(Arrays.asList(TreasureKind.ONEHAND)),
+                    new ArrayList(Arrays.asList(TreasureKind.ONEHAND)));
+            
+                    prize = new Prize(4,1);
+                    monstruos.add(new Monster("Angeles de la noche ibicenca",14,badConsequence,prize));
+                    
+                    
+                // Byakhees de bonanza
             badConsequence = new BadConsequence("Pierdes tu armadura visible y otra oculta", 0,
-                     new ArrayList(Arrays.asList(TreasureKind.ARMOR)),
-                     new ArrayList(Arrays.asList(TreasureKind.ARMOR)));
+                    new ArrayList(Arrays.asList(TreasureKind.ARMOR)),
+                    new ArrayList(Arrays.asList(TreasureKind.ARMOR)));
             prize=new Prize(2, 1);
             monstruos.add(new Monster("Byakhess de bonanza", 8, badConsequence, prize));
-             
             
-                 // Chibithulhu
-             badConsequence = new BadConsequence("Embobados con el lindo primigenio te descartas de tu casco visible"
-                 ,0,new ArrayList(Arrays.asList(TreasureKind.HELMET)),null);
+            
+                // Chibithulhu
+            badConsequence = new BadConsequence("Embobados con el lindo primigenio te descartas de tu casco visible"
+                ,0,new ArrayList(Arrays.asList(TreasureKind.HELMET)),null);
             prize = new Prize(1, 1);
             monstruos.add(new Monster("Chibithulhu",2,badConsequence,prize));
             
@@ -65,6 +66,7 @@ public class PruebaNapakalaki {
                 //El sopor de Dunwich
             badConsequence = new BadConsequence("El primordial bostezo contagioso.Pierdes el calzado visible"
                     , 0, new ArrayList(Arrays.asList(TreasureKind.SHOES)), null);
+                    , 0, new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)), null);
             prize = new Prize(1,1);
             monstruos.add(new Monster("El sopor de Dunwich",2,badConsequence,prize));
             
