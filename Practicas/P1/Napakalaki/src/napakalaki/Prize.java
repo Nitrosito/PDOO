@@ -28,7 +28,7 @@ public class Prize {
     }
     
     public String toString(){
-            return "; Tesoros:" + this.treasures + "; Nivel:" + this.level;
+            return "\nTesoros:" + this.treasures + "\nNivel:" + this.level;
     }
 
 }
