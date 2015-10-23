@@ -159,10 +159,11 @@ public class PruebaNapakalaki {
                 System.out.print("\n\n");
             }
             */
-                        // Muestra todos los monstruos
-            for(int i=0; i<monstruos.size();i++){
-                if(monstruos.get(i).getCombatLevel()>10){
-                    System.out.print(monstruos.get(i));
+            
+            // Muestra monstruos con condicion
+            for(Monster m : monstruos ){
+                if(m.getCombatLevel()>10){
+                    System.out.print(m);
                     System.out.print("\n\n");
                 }
             }
