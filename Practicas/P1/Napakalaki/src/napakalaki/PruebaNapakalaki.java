@@ -66,7 +66,6 @@ public class PruebaNapakalaki {
                 //El sopor de Dunwich
             badConsequence = new BadConsequence("El primordial bostezo contagioso.Pierdes el calzado visible"
                     , 0, new ArrayList(Arrays.asList(TreasureKind.SHOES)), null);
-                    , 0, new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)), null);
             prize = new Prize(1,1);
             monstruos.add(new Monster("El sopor de Dunwich",2,badConsequence,prize));
             
@@ -154,10 +153,18 @@ public class PruebaNapakalaki {
             prize = new Prize(1,1);
             monstruos.add(new Monster("Bicéfalo",20,badConsequence,prize));
            
-            
+           /* // Muestra todos los monstruos
             for(int i=0; i<19;i++){
                 System.out.print(monstruos.get(i));
-                System.out.print("\n\n\n\n");
+                System.out.print("\n\n");
+            }
+            */
+                        // Muestra todos los monstruos
+            for(int i=0; i<monstruos.size();i++){
+                if(monstruos.get(i).getCombatLevel()>10){
+                    System.out.print(monstruos.get(i));
+                    System.out.print("\n\n");
+                }
             }
     }
     
