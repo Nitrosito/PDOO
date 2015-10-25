@@ -160,9 +160,11 @@ public class PruebaNapakalaki {
             }
             */
             
-            // Muestra monstruos con condicion
+            // Muestra monstruos con condicion (Mas de nv 3 , que den 2 o mas tesoros y que no maten)
             for(Monster m : monstruos ){
-                if(m.getCombatLevel()>10){
+                if(m.getCombatLevel()>6 &&
+                   m.getPrize().getTreasures()>=2 &&
+                   m.getBadconsequence().getDeath()==false){
                     System.out.print(m);
                     System.out.print("\n\n");
                 }
