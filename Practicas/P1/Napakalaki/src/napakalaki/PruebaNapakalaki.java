@@ -71,8 +71,7 @@ public class PruebaNapakalaki {
             
             
                 //El gorron en el umbral
-            // #FIXME PIERDES TODOS TUS TESOROS VISIBLES, NO SE SI SE HACE ASÍ
-            badConsequence = new BadConsequence("Pierdes todos tus tesoros visibles",999,0,0);
+            badConsequence = new BadConsequence("Pierdes todos tus tesoros visibles",5,0,0);
             prize = new Prize(3,1);
             monstruos.add(new Monster("El gorron en el umbral",10,badConsequence,prize));
             
@@ -128,7 +127,7 @@ public class PruebaNapakalaki {
             prize = new Prize(4,1);
             monstruos.add(new Monster("Familia feliz",1,badConsequence,prize));
             
-                //Roboggoth
+                //Roboggoth #FIXME
             badConsequence = new BadConsequence("La quinta directiva primaria te obliga a perder 2 niveles y un tesoro 2 manos visible"
             ,0,new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)),null);
             prize = new Prize(2,1);
@@ -147,9 +146,8 @@ public class PruebaNapakalaki {
             monstruos.add(new Monster("El Lenguas",20,badConsequence,prize));
             
                 //Bicéfalo
-            // #FIXME PIERDES TUS TESOROS VISIBLES DE LAS MANOS, NO SE SI SE HACE ASÍ
              badConsequence = new BadConsequence("Te faltan manos para tanta cabeza. Pierdes" 
-                     +"3 niveles y tus tesoros visibles de las manos",3,999,0);
+                     +"3 niveles y tus tesoros visibles de las manos",3,5,0);
             prize = new Prize(1,1);
             monstruos.add(new Monster("Bicéfalo",20,badConsequence,prize));
            
