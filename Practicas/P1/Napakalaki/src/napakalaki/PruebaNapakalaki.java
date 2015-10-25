@@ -127,7 +127,7 @@ public class PruebaNapakalaki {
             prize = new Prize(4,1);
             monstruos.add(new Monster("Familia feliz",1,badConsequence,prize));
             
-                //Roboggoth #FIXME
+                //Roboggoth
             badConsequence = new BadConsequence("La quinta directiva primaria te obliga a perder 2 niveles y un tesoro 2 manos visible"
             ,0,new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)),null);
             prize = new Prize(2,1);
