@@ -25,11 +25,26 @@ public class BadConsequence {
             this.levels=levels;
             this.nVisibleTreasures=nVisible;
             this.nHiddenTreasures=nHidden;
+            this.death=false;
     }
     
     public BadConsequence(String text,boolean death){
+        this.text="";
+        this.levels=0;
+        this.nVisibleTreasures=0;
+        this.nHiddenTreasures=0;
         this.text=text;
         this.death=death;
+    }
+    
+        public BadConsequence(String text, int levels, ArrayList<TreasureKind> tVisible, ArrayList<TreasureKind> tHidden) {
+        this.text=text;
+        this.levels=levels;
+        this.nVisibleTreasures=0;
+        this.nHiddenTreasures=0;
+        this.specificVisibleTreasures=tVisible;
+        this.specificHiddenTreasures=tHidden;
+        this.death=false;
     }
     
     public String getText(){
@@ -60,13 +75,7 @@ public class BadConsequence {
         return specificHiddenTreasures;
     }
 
-    public BadConsequence(String text, int levels, ArrayList<TreasureKind> tVisible, ArrayList<TreasureKind> tHidden) {
-        this.text=text;
-        this.levels=levels;
-        this.specificVisibleTreasures=tVisible;
-        this.specificHiddenTreasures=tHidden;
 
-    }
     
     public String toString(){
         return "; Nombre mala consecuencia:" + this.text + "; Niveles:" + Integer.toString(this.levels) 
