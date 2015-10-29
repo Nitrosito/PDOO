@@ -172,18 +172,40 @@ public class PruebaNapakalaki {
            */
             
             //Tienen un nivel de combate superior a 10.
-             for(Monster m : monstruos ){
+           /*  for(Monster m : monstruos ){
                  if(m.getCombatLevel()>10){
                      System.out.print(m);
                      System.out.print("\n\n");
                  }
              }
-             
+           */
+            
+             //Tengan un mal rollo que implique sólo pérdida de niveles.
+           /* for(Monster m : monstruos ){
+                 if(m.getBadconsequence().getDeath()==false &
+                    m.getBadconsequence().getnHiddenTreasures()==0 &&
+                    m.getBadconsequence().getSpecificHiddenTreasures().isEmpty()==true &&
+                    m.getBadconsequence().getSpecificVisibleTreasures().isEmpty()==true &&
+                    m.getBadconsequence().getnHiddenTreasures()==0 &&
+                    m.getBadconsequence().getnVisibleTreasures()==0){
+                     System.out.print(m);
+                     System.out.print("\n\n");
+                 }
+             }
+             */
+            //Su buen rollo indique una ganancia de niveles superior a 1.
+            
+            //Su mal rollo suponga la pérdida de un determinado tipo de tesoros ya sea visibles y/o ocultos..
+             for(Monster m : monstruos ){
+                 if(m.getBadconsequence().getSpecificHiddenTreasures().isEmpty()==false ||
+                    m.getBadconsequence().getSpecificVisibleTreasures().isEmpty()==false){
+                     System.out.print(m);
+                     System.out.print("\n\n");
+                 }
+             }
     } // fin clase
             
-            //Tengan un mal rollo que implique sólo pérdida de niveles.
-            //Su buen rollo indique una ganancia de niveles superior a 1.
-//Su mal rollo suponga la pérdida de un determinado tipo de tesoros ya sea visibles y/o ocultos..
+            
 
     
 }
