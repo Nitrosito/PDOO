@@ -78,10 +78,10 @@ public class BadConsequence {
 
     
     public String toString(){
-        return "; Nombre mala consecuencia:" + this.text + "; Niveles:" + Integer.toString(this.levels) 
-                + "; Tesoros Visibles:" + Integer.toString(this.nVisibleTreasures) +
-                "; Tesoros No Visibles:" + Integer.toHexString(this.nHiddenTreasures) +
-                "; Muerte:" + this.death;
+        return "\n Mala Consecuencia \n       Nombre mala consecuencia:" + this.text + "\n       Niveles:" + Integer.toString(this.levels) 
+                + "\n       Tesoros Visibles:" + Integer.toString(this.nVisibleTreasures) +
+                "\n       Tesoros No Visibles:" + Integer.toHexString(this.nHiddenTreasures) +
+                "\n       Muerte:" + this.death;
     }
     
     

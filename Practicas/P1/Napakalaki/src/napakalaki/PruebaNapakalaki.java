@@ -158,16 +158,32 @@ public class PruebaNapakalaki {
             }
             */
             
-            // Muestra monstruos con condicion (Mas de nv 3 , que den 2 o mas tesoros y que no maten)
-            for(Monster m : monstruos ){
+            // Pruebas Random
+          /*  for(Monster m : monstruos ){
                 if(m.getCombatLevel()>6 &&
                    m.getPrize().getTreasures()>=2 &&
                    m.getBadconsequence().getDeath()==false &&
-                   m.getBadconsequence().getSpecificHiddenTreasures().isEmpty()== false){
+                   m.getBadconsequence().getSpecificHiddenTreasures().isEmpty()== true &&
+                   m.getBadconsequence().getSpecificVisibleTreasures().isEmpty()==false){
                     System.out.print(m);
                     System.out.print("\n\n");
                 }
             }
-    }
+           */
+            
+            //Tienen un nivel de combate superior a 10.
+             for(Monster m : monstruos ){
+                 if(m.getCombatLevel()>10){
+                     System.out.print(m);
+                     System.out.print("\n\n");
+                 }
+             }
+             
+    } // fin clase
+            
+            //Tengan un mal rollo que implique sólo pérdida de niveles.
+            //Su buen rollo indique una ganancia de niveles superior a 1.
+//Su mal rollo suponga la pérdida de un determinado tipo de tesoros ya sea visibles y/o ocultos..
+
     
 }
