@@ -58,14 +58,14 @@ public class PruebaNapakalaki {
             
                 // Chibithulhu
             badConsequence = new BadConsequence("Embobados con el lindo primigenio te descartas de tu casco visible"
-                ,0,new ArrayList(Arrays.asList(TreasureKind.HELMET)),null);
+                ,0,new ArrayList(Arrays.asList(TreasureKind.HELMET)),new ArrayList());
             prize = new Prize(1, 1);
             monstruos.add(new Monster("Chibithulhu",2,badConsequence,prize));
             
             
                 //El sopor de Dunwich
             badConsequence = new BadConsequence("El primordial bostezo contagioso.Pierdes el calzado visible"
-                    , 0, new ArrayList(Arrays.asList(TreasureKind.SHOES)), null);
+                    , 0, new ArrayList(Arrays.asList(TreasureKind.SHOES)),new ArrayList());
             prize = new Prize(1,1);
             monstruos.add(new Monster("El sopor de Dunwich",2,badConsequence,prize));
             
@@ -78,14 +78,14 @@ public class PruebaNapakalaki {
             
                 //H.P. Munchraft
             badConsequence = new BadConsequence("Pierdes la armadura visible",0,
-                    new ArrayList(Arrays.asList(TreasureKind.ARMOR)),null);
+                    new ArrayList(Arrays.asList(TreasureKind.ARMOR)),new ArrayList());
             prize = new Prize(2,1);
             monstruos.add(new Monster("H.P. Munchraft",6,badConsequence,prize));
             
             
                 //Bichgooth
             badConsequence = new BadConsequence("Sientes bichos bajo la ropa.Descarta la armadura visible",
-            0, new ArrayList(Arrays.asList(TreasureKind.ARMOR)),null);
+            0, new ArrayList(Arrays.asList(TreasureKind.ARMOR)),new ArrayList());
             prize = new Prize(1,1);
             monstruos.add(new Monster("Bichgooth",2,badConsequence,prize));
             
@@ -108,7 +108,7 @@ public class PruebaNapakalaki {
             
                 //Dameargo
             badConsequence = new BadConsequence("Te intentas escaquear.Pierdes una mano visible"
-                    ,0, new ArrayList(Arrays.asList(TreasureKind.ONEHAND)),null);
+                    ,0, new ArrayList(Arrays.asList(TreasureKind.ONEHAND)),new ArrayList());
             prize = new Prize(2,1);
             monstruos.add(new Monster("Dameargo",1,badConsequence,prize));
             
@@ -129,13 +129,13 @@ public class PruebaNapakalaki {
             
                 //Roboggoth
             badConsequence = new BadConsequence("La quinta directiva primaria te obliga a perder 2 niveles y un tesoro 2 manos visible"
-            ,0,new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)),null);
+            ,0,new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)),new ArrayList());
             prize = new Prize(2,1);
             monstruos.add(new Monster("Roboggoth",8,badConsequence,prize));
             
                 //El espia
             badConsequence = new BadConsequence("Te asusta en la noche. Pierdes un casco visible",0
-                    ,new ArrayList(Arrays.asList(TreasureKind.HELMET)),null);
+                    ,new ArrayList(Arrays.asList(TreasureKind.HELMET)),new ArrayList());
             prize = new Prize(1,1);
             monstruos.add(new Monster("El espia",5,badConsequence,prize));
             
@@ -162,7 +162,8 @@ public class PruebaNapakalaki {
             for(Monster m : monstruos ){
                 if(m.getCombatLevel()>6 &&
                    m.getPrize().getTreasures()>=2 &&
-                   m.getBadconsequence().getDeath()==false){
+                   m.getBadconsequence().getDeath()==false &&
+                   m.getBadconsequence().getSpecificHiddenTreasures().isEmpty()== false){
                     System.out.print(m);
                     System.out.print("\n\n");
                 }
