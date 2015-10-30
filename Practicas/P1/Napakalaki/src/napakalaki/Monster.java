@@ -1,3 +1,5 @@
+//EXAMEN
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,6 +16,7 @@ public class Monster {
     private int combatLevel;
     private Prize prize;
     private BadConsequence badconsecuence;
+    private Region region;
     
     
     
@@ -34,16 +37,27 @@ public class Monster {
             return badconsecuence;
     }
 
-    Monster(String name, int level, BadConsequence bc, Prize price){
+    Monster(String name, int level, BadConsequence bc, Prize price, Region re){
             this.name=name;
             this.combatLevel=level;
             this.badconsecuence=bc;
             this.prize=price;
+            this.region=re;
     }
     
     public String toString(){
         return "Nombre Monstruo:" + this.name + "\nNivel combate " + Integer.toString(combatLevel)+ this.prize.toString() +
-                this.badconsecuence.toString();
+                this.badconsecuence.toString() + this.region.toString();
+    }
+    
+    public Region getRegion(){
+        return region;
+    }
+    
+    public void setRegion(Region r){
+        region=r;
     }
 }
+
+//FIN EXAMEN
 
