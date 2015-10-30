@@ -14,8 +14,15 @@ public class Monster {
     private int combatLevel;
     private Prize prize;
     private BadConsequence badconsecuence;
+    private Region region;
     
+    public Region getRegion(){
+        return region;
+    }
     
+    public void setRegion(Region unaregion){
+        region=unaregion;
+    }
     
     public String getName(){
             return name;
@@ -34,15 +41,18 @@ public class Monster {
             return badconsecuence;
     }
 
-    Monster(String name, int level, BadConsequence bc, Prize price){
+    Monster(String name, int level, BadConsequence bc, Prize price,Region unaregion){
             this.name=name;
             this.combatLevel=level;
             this.badconsecuence=bc;
             this.prize=price;
+            this.region=unaregion;
     }
     
     public String toString(){
-        return "Nombre Monstruo:" + this.name + "\n       Nivel combate: " + Integer.toString(combatLevel)+ this.prize.toString() +
+        return "Nombre Monstruo:" + this.name + "\n       Region:"+ this.getRegion().getName() +
+                "\n       Temperatura:"+ this.getRegion().getTemperature() + "\n       Nivel combate: " +
+                Integer.toString(combatLevel)+ this.prize.toString() +
                 this.badconsecuence.toString();
     }
 }
