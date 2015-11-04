@@ -45,5 +45,11 @@ public class Monster {
         return "Nombre Monstruo:" + this.name + "\n       Nivel combate: " + Integer.toString(combatLevel)+ this.prize.toString() +
                 this.badconsecuence.toString();
     }
+    
+    public int getLevelsGained(){
+    }
+    
+    public int getTreasuresGained(){
+    }
 }
 
