@@ -20,6 +20,56 @@ public class BadConsequence {
     private int nHiddenTreasures;
     private boolean death;
     
+    public boolean isEmpy(){
+        //
+    }
+    
+        
+    public int getLevels(){
+            return levels;
+    }
+    
+    
+    public int getnVisibleTreasures(){
+        return nVisibleTreasures;
+    }
+    
+    
+    public int getnHiddenTreasures(){
+        return nHiddenTreasures;
+    }
+    
+    public ArrayList<TreasureKind> getSpecificVisibleTreasures(){
+        return specificVisibleTreasures;
+    }
+    
+    
+    public ArrayList<TreasureKind> getSpecificHiddenTreasures(){
+        return specificHiddenTreasures;
+    }
+    
+    void substractVisibleTreasure(Treasure t){
+        //
+    }
+    
+    void substractHiddenTreasure(Treasure t){
+        //
+    }
+    
+    
+    public String getText(){
+            return text;
+    }
+
+    
+
+    
+    public boolean getDeath(){
+        return death;
+    }
+    
+        
+    
     public BadConsequence(String text, int levels, int nVisible, int nHidden){
             this.text=text;
             this.levels=levels;
@@ -46,36 +96,11 @@ public class BadConsequence {
         this.specificHiddenTreasures=tHidden;
         this.death=false;
     }
-    
-    public String getText(){
-            return text;
+        
+    BadConsequence adjustToFitTreasureList(ArrayList<TreasureKind> visible, ArrayList<TreasureKind> hidden){
+        //
     }
     
-    public int getLevels(){
-            return levels;
-    }
-    
-    public int getnVisibleTreasures(){
-        return nVisibleTreasures;
-    }
-    
-    public int getnHiddenTreasures(){
-        return nHiddenTreasures;
-    }
-    
-    public boolean getDeath(){
-        return death;
-    }
-    
-    public ArrayList<TreasureKind> getSpecificVisibleTreasures(){
-        return specificVisibleTreasures;
-    }
-    
-    public ArrayList<TreasureKind> getSpecificHiddenTreasures(){
-        return specificHiddenTreasures;
-    }
-
-
     
     public String toString(){
         return "\n Mala Consecuencia \n       Nombre mala consecuencia:" + this.text + "\n       Niveles:" + Integer.toString(this.levels) 
