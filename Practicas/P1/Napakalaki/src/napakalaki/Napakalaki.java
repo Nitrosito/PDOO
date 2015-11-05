@@ -18,7 +18,7 @@ public class Napakalaki {
     private Player currentPlayer;
     private Player players;
     //Y combatResult?¿?
-    private enum CombatResult; //??
+    private CombatResult combatResult; //??
         
 
     
