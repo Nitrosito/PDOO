@@ -49,9 +49,6 @@ public class Napakalaki {
         //
     }
     
-    public Napakalaki getInstance(){ // #FIXME Preguntar por que subrayado
-        //
-    }
     
     public CombatResult developCombat(){
         //
