@@ -19,6 +19,7 @@ public class BadConsequence {
     private int nVisibleTreasures;
     private int nHiddenTreasures;
     private boolean death;
+    static final int MAXTREASURES =10;
     
     public boolean isEmpty(){
         if(nVisibleTreasures==0 && nHiddenTreasures==0 &&
