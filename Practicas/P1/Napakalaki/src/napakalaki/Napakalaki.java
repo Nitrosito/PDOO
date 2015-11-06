@@ -17,8 +17,7 @@ public class Napakalaki {
     private CardDealer dealer;
     private Player currentPlayer;
     private Player players;
-    //Y combatResult?¿?
-    private CombatResult combatResult; //??
+
         
 
     
