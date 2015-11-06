@@ -29,7 +29,7 @@ public class Napakalaki {
      // Aqui va la asignación de valores, etc
     }
 
-    private static Napakalaki getInstance(){
+    public static Napakalaki getInstance(){
         return instance;
     }
     

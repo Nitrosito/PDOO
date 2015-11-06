@@ -17,13 +17,10 @@ public class Dice {
      // Aqui va la asignación de valores, etc
     }
 
-    private static Dice getInstance(){
+    public static Dice getInstance(){
         return instance;
     }
     
-    public Dice getInstance(){
-        //
-    }
     
     public int nextNumber(){
         //
