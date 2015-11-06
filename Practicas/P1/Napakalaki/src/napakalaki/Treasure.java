@@ -14,8 +14,10 @@ public class Treasure {
     private int bonus;
     private TreasureKind type;
     
-    public Treasure(string n,int bonus,TresureKind t){
-        //
+    public Treasure(String n,int b,TreasureKind t){
+        name=n;
+        bonus=b;
+        type=t;
     }
     
     public String getName(){
