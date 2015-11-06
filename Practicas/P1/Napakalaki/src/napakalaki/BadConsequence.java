@@ -20,10 +20,9 @@ public class BadConsequence {
     private int nHiddenTreasures;
     private boolean death;
     
-    public boolean isEmpy(){
-        if(death==false && nVisibleTreasures==0 && nHiddenTreasures==0 &&
-           death==false && levels==0 && specificHiddenTreasures.size()==0 &&
-           specificVisibleTreasures.size()==0){
+    public boolean isEmpty(){
+        if(nVisibleTreasures==0 && nHiddenTreasures==0 &&
+           specificHiddenTreasures.size()==0 && specificVisibleTreasures.size()==0){
             return true;
         }
         return false;
