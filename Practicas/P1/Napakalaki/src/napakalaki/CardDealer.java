@@ -22,8 +22,9 @@ public class CardDealer {
      // Aqui va la asignación de valores, etc
     }
 
-    private static CardDealer getInstance(){
+    public static CardDealer getInstance(){
         return instance;
+        // STATIC = Metodo de CLaSE
     }
     
     private void initTreasureCardDeck(){
@@ -41,10 +42,7 @@ public class CardDealer {
     private void shuffleMonster(){
         //
     }
-    
-    public CardDealer getinstance(){
-        //
-    }
+   
     
     //Public    
     public Treasure nextTreasure(){
