@@ -15,6 +15,10 @@ public class Player {
    private int level;
    private boolean dead=true;
    private boolean canlSteal=true;
+   private Player enemy;
+   private Treasure hiddenTreasures;
+   private Treasure visibleTreasures;
+   private BadConsequence pendingBadConsequence;
    
    static final int MAXLEVEL=10;
    
