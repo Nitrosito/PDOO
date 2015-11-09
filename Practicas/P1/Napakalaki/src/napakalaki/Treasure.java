@@ -21,15 +21,15 @@ public class Treasure {
     }
     
     public String getName(){
-        //
+        return name;
     }
     
     public int getBonus(){
-        //
+        return bonus;
     }
     
     public TreasureKind getType(){
-        //
+        return type;
     }
     
     
