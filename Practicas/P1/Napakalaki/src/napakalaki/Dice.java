@@ -23,7 +23,7 @@ public class Dice {
     
     
     public int nextNumber(){
-        //
+        return (int) (Math.random()*6);       
     }
     
 }
