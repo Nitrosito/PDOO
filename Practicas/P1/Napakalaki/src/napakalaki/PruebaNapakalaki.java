@@ -27,7 +27,7 @@ public class PruebaNapakalaki {
             System.out.println(miPrize.getTreasures());
             System.out.println(miPrize.getLevel());
             System.out.print(Mimonstruo.toString()); // Testeando todos los tostring
-        */
+        
         
             ArrayList<Monster> monstruos = new ArrayList(); // Array de monstruos
             
@@ -192,7 +192,7 @@ public class PruebaNapakalaki {
                      System.out.print("\n\n");
                  }
              }
-             */
+             
             //Su buen rollo indique una ganancia de niveles superior a 1.
             
             //Su mal rollo suponga la pérdida de un determinado tipo de tesoros ya sea visibles y/o ocultos..
@@ -203,6 +203,10 @@ public class PruebaNapakalaki {
                      System.out.print("\n\n");
                  }
              }
+           
+           
+            */
+
     } // fin clase
             
             
