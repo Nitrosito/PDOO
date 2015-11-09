@@ -25,7 +25,10 @@ public class Napakalaki {
     private static final Napakalaki instance = new Napakalaki();
     
     private Napakalaki(){
-     // Aqui va la asignación de valores, etc
+        currentMonster=null;
+        dealer=null;
+        currentPlayer=null;
+        players=null;
     }
 
     public static Napakalaki getInstance(){
