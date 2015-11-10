@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Player {
    private String name;
-   private int level;
+   private int level=1;
    private boolean dead=true;
    private boolean canlSteal=true;
    private Player enemy;
