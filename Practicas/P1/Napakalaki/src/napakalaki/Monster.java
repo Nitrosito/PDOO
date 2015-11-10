@@ -26,9 +26,6 @@ public class Monster {
             return combatLevel;
     }
     
-    public Prize getPrize(){
-            return prize;
-    }
     
     public BadConsequence getBadconsequence(){
             return badconsecuence;
@@ -47,9 +44,11 @@ public class Monster {
     }
     
     public int getLevelsGained(){
+        return prize.getLevel();
     }
     
     public int getTreasuresGained(){
+        return prize.getTreasures();
     }
 }
 
