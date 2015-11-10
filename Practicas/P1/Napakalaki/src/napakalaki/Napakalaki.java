@@ -16,7 +16,7 @@ public class Napakalaki {
     private Monster currentMonster;
     private CardDealer dealer;
     private Player currentPlayer;
-    private Player players;
+    private ArrayList<Player> players;
 
         
 
