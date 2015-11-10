@@ -87,10 +87,10 @@ public class Player {
        return dead;
    }
    
-   public Treasure[] getHiddenTreasure(){
+   public ArrayList<Treasure> getHiddenTreasure(){
    }
    
-   public Treasure[] getVisibleTreasure(){
+   public ArrayList<Treasure> getVisibleTreasure(){
    }
    
    public CombatResult combat(Monster m){
@@ -112,7 +112,7 @@ public class Player {
        return false;
    }
    
-   public void initTreasure(){
+   public void initTreasures(){
    }
    
    public int getLevels(){
@@ -129,7 +129,7 @@ public class Player {
    private Treasure giveMeATreasure(){
    }
    
-   public boolean canlSteal(){
+   public boolean canISteal(){
    }
    
    private boolean canYouGiveMeATreasure(){
