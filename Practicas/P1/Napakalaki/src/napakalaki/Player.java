@@ -5,6 +5,8 @@
  */
 package napakalaki;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author nico
@@ -16,8 +18,8 @@ public class Player {
    private boolean dead=true;
    private boolean canlSteal=true;
    private Player enemy;
-   private ArrayList<Treasure> hiddenTreasures;
-   private ArrayList<Treasure> visibleTreasures;
+   private ArrayList<Treasure> hiddenTreasures=new ArrayList();
+   private ArrayList<Treasure> visibleTreasures=new ArrayList();
    private BadConsequence pendingBadConsequence;
    
    static final int MAXLEVEL=10;
