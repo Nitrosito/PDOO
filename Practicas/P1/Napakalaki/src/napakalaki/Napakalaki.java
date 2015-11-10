@@ -56,19 +56,19 @@ public class Napakalaki {
         //
     }
     
-    public void discardVisibleTreasures(Treasure treasures){
+    public void discardVisibleTreasures(ArrayList<Treasure> treasures){
         //
     }
     
-    public void discardHiddenTreasures(Treasures treasures){
+    public void discardHiddenTreasures(ArrayList<Treasures> treasures){
         //
     }
     
-    public void makeTreasuresVisible(Treasures treasures){
+    public void makeTreasuresVisible(ArrayList<Treasures> treasures){
         //
     }
     
-    public void initGame(string players){
+    public void initGame(ArrayLIst<String> players){
         //
     }
     
