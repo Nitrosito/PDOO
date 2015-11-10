@@ -28,7 +28,7 @@ public class Napakalaki {
         currentMonster=null;
         dealer=null;
         currentPlayer=null;
-        players=null;
+        players=new ArrayList();
     }
 
     public static Napakalaki getInstance(){
