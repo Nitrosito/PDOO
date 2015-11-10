@@ -64,8 +64,74 @@ public class CardDealer {
         //Clavo de rail ferroviario
         unusedTreasures.add(new Treasure("Clavo de rail ferroviario",3,TreasureKind.ONEHAND));
         
-        //#TODO FALTAN MÁS TESOROS
+
         
+        //Cuchillo de sushi arcano
+	unusedTreasures.add(new Treasure("Cuchillo de sushi arcano",2, TreasureKind.ONEHAND));
+ 
+	//Fez alopedo
+	unusedTreasures.add(new Treasure("Fez alopedo",3, TreasureKind.HELMET));
+ 
+	//Hacha prehistorica
+	unusedTreasures.add(new Treasure("Hacha prehistorica",2, TreasureKind.ONEHAND));
+	
+	//El aparato de Pr.Tesla
+	unusedTreasures.add(new Treasure("El aparato de Pr.Tesla",4, TreasureKind.ARMOR));
+	
+	//Gaita
+	unusedTreasures.add(new Treasure("Gaita",4, TreasureKind.BOTHHANDS));
+	
+	//Insecticida
+	unusedTreasures.add(new Treasure("Insecticida",2, TreasureKind.ONEHAND));
+	
+	//Escopeta de 3 cañones
+	unusedTreasures.add(new Treasure("Escopeta de 3 cañones",4, TreasureKind.BOTHHANDS));
+	
+	//Garabato mistico
+	unusedTreasures.add(new Treasure("Garabato mistico",2, TreasureKind.ONEHAND));
+	
+	//La rebeca metalica
+	unusedTreasures.add(new Treasure("La rebeca metalica",2, TreasureKind.ARMOR));
+	
+	//Lanzallamas
+	unusedTreasures.add(new Treasure("Lanzallamas",4, TreasureKind.BOTHHANDS));
+	
+	//Necrocomicon
+	unusedTreasures.add(new Treasure("Necrocomicon",1, TreasureKind.ONEHAND));
+	
+	//Necronomicon
+	unusedTreasures.add(new Treasure("Necronomicon",5, TreasureKind.BOTHHANDS));
+	
+	//Linterna a 2 manos
+	unusedTreasures.add(new Treasure("Linterna a 2 manos",3, TreasureKind.BOTHHANDS));
+	
+	//Necrognomicon
+	unusedTreasures.add(new Treasure("Necrognomicon",2, TreasureKind.ONEHAND));
+	
+	//Necrotelecom
+	unusedTreasures.add(new Treasure("Necrotelecom",2, TreasureKind.HELMET));
+	
+	//Mazo de los antiguos
+	unusedTreasures.add(new Treasure("Mazo de los antiguos",3, TreasureKind.ONEHAND));
+	
+	//Necroplayboycon
+	unusedTreasures.add(new Treasure("Necroplayboycon",3, TreasureKind.ONEHAND));
+	
+	//Porra preternatural
+	unusedTreasures.add(new Treasure("Porra preternatural",3, TreasureKind.ONEHAND));
+	
+	//Shogulador
+	unusedTreasures.add(new Treasure("Shogulador",1, TreasureKind.BOTHHANDS));
+	
+	//Varita de atizamiento
+	unusedTreasures.add(new Treasure("Varita de atizamiento",3, TreasureKind.ONEHAND));
+	
+	//Tentacula de pega
+	unusedTreasures.add(new Treasure("Tentaculo de pega",2, TreasureKind.HELMET));
+	
+	//Zapato deja-amigos
+	unusedTreasures.add(new Treasure("Zapato deja-amigos",1, TreasureKind.SHOES));
+	  
         
     }
     
