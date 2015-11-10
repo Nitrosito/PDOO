@@ -106,7 +106,7 @@ public class Player {
    }
    
    public boolean validState(){
-       if(hiddenTreasures.size()<=4 && pendingBadConsequence.isEmpy()){
+       if(hiddenTreasures.size()<=4 && pendingBadConsequence.isEmpty()){
            return true;
        }
        return false;
@@ -130,14 +130,16 @@ public class Player {
    }
    
    public boolean canISteal(){
+       return canlSteal;
    }
    
    private boolean canYouGiveMeATreasure(){
+       return !hiddenTreasures.isEmpty();
    }
    
    private void haveStolen(){
    }
    
-   public void descardAllTreasures(){
+   public void discardAllTreasures(){
    }
 }
