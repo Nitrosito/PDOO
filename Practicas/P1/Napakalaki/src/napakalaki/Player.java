@@ -5,6 +5,8 @@
  */
 package napakalaki;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author nico
@@ -12,12 +14,12 @@ package napakalaki;
 
 public class Player {
    private String name;
-   private int level;
+   private int level=1;
    private boolean dead=true;
    private boolean canlSteal=true;
    private Player enemy;
-   private ArrayList<Treasure> hiddenTreasures;
-   private ArrayList<Treasure> visibleTreasures;
+   private ArrayList<Treasure> hiddenTreasures=new ArrayList();
+   private ArrayList<Treasure> visibleTreasures=new ArrayList();
    private BadConsequence pendingBadConsequence;
    
    static final int MAXLEVEL=10;
@@ -85,10 +87,10 @@ public class Player {
        return dead;
    }
    
-   public Treasure[] getHiddenTreasure(){
+   public ArrayList<Treasure> getHiddenTreasure(){
    }
    
-   public Treasure[] getVisibleTreasure(){
+   public ArrayList<Treasure> getVisibleTreasure(){
    }
    
    public CombatResult combat(Monster m){
@@ -104,13 +106,13 @@ public class Player {
    }
    
    public boolean validState(){
-       if(hiddenTreasures.size()<=4 && pendingBadConsequence.isEmpy()){
+       if(hiddenTreasures.size()<=4 && pendingBadConsequence.isEmpty()){
            return true;
        }
        return false;
    }
    
-   public void initTreasure(){
+   public void initTreasures(){
    }
    
    public int getLevels(){
@@ -127,15 +129,17 @@ public class Player {
    private Treasure giveMeATreasure(){
    }
    
-   public boolean canlSteal(){
+   public boolean canISteal(){
+       return canlSteal;
    }
    
    private boolean canYouGiveMeATreasure(){
+       return !hiddenTreasures.isEmpty();
    }
    
    private void haveStolen(){
    }
    
-   public void descardAllTreasures(){
+   public void discardAllTreasures(){
    }
 }

@@ -16,7 +16,7 @@ public class Napakalaki {
     private Monster currentMonster;
     private CardDealer dealer;
     private Player currentPlayer;
-    private Player players;
+    private ArrayList<Player> players;
 
         
 
@@ -28,7 +28,7 @@ public class Napakalaki {
         currentMonster=null;
         dealer=null;
         currentPlayer=null;
-        players=null;
+        players=new ArrayList();
     }
 
     public static Napakalaki getInstance(){
@@ -56,19 +56,19 @@ public class Napakalaki {
         //
     }
     
-    public void discardVisibleTreasures(Treasure treasures){
+    public void discardVisibleTreasures(ArrayList<Treasure> treasures){
         //
     }
     
-    public void discardHiddenTreasures(Treasures treasures){
+    public void discardHiddenTreasures(ArrayList<Treasures> treasures){
         //
     }
     
-    public void makeTreasuresVisible(Treasures treasures){
+    public void makeTreasuresVisible(ArrayList<Treasures> treasures){
         //
     }
     
-    public void initGame(string players){
+    public void initGame(ArrayLIst<String> players){
         //
     }
     
