@@ -285,6 +285,21 @@ public class CardDealer {
         //
     }
     
+    /*
+    public Monster mayorNivel(){
+        BadConsequence badConsequence = new BadConsequence("La familia te atrapa. Est́as muerto",true);
+        Prize prize = new Prize(4,1);
+        Monster mayornivel = new Monster("Clean",0,badConsequence,prize);
+        initMonsterCardDeck();
+        
+        for (Monster unusedMonster1 : unusedMonster) {
+            if(unusedMonster1.getCombatLevel() > mayornivel.getCombatLevel())
+                mayornivel=unusedMonster1;
+        }
+        return mayornivel;
+    }
+    */
+    
     
     
     
