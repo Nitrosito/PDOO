@@ -265,13 +265,13 @@ public class CardDealer {
    
     
     //Public    
-    public Treasure nextTreasure(){
+    //public Treasure nextTreasure(){
         //
-    }
+    //}
     
-    public Monster nextMonster(){
+    //public Monster nextMonster(){
         //
-    }
+    //}
     
     public void giveTreasureBack(Treasure t){
         usedTreasures.add(t);

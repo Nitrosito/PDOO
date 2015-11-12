@@ -16,7 +16,7 @@ public class Player {
    private String name;
    private int level=1;
    private boolean dead=true;
-   private boolean canlSteal=true;
+   private boolean canISteal=true;
    private Player enemy;
    private ArrayList<Treasure> hiddenTreasures=new ArrayList();
    private ArrayList<Treasure> visibleTreasures=new ArrayList();
@@ -32,7 +32,7 @@ public class Player {
    }
    
    private void bringToLife(){
-       dead=true;
+       dead=false;
    }
    
    private int getCombatLevel(){
@@ -71,11 +71,11 @@ public class Player {
    private void applyBadConsequence(Monster m){
    }
    
-   private boolean canMakeTreasureVisible(Treasure t){
-   }
+  // private boolean canMakeTreasureVisible(Treasure t){
+   //}
    
-   private int howManyVisibleTreasures(TreasureKind tKind){
-   }
+  // private int howManyVisibleTreasures(TreasureKind tKind){
+   //}
    
    private void dielNoTreasures(){
        if(visibleTreasures.size()==0 && hiddenTreasures.size()==0){
@@ -87,14 +87,14 @@ public class Player {
        return dead;
    }
    
-   public ArrayList<Treasure> getHiddenTreasure(){
-   }
+  // public ArrayList<Treasure> getHiddenTreasure(){
+   //}
    
-   public ArrayList<Treasure> getVisibleTreasure(){
-   }
+   //public ArrayList<Treasure> getVisibleTreasure(){
+   //}
    
-   public CombatResult combat(Monster m){
-   }
+   //public CombatResult combat(Monster m){
+  // }
    
    public void makeTreasureVisible(Treasure t){
    }
@@ -119,18 +119,18 @@ public class Player {
        return level;
    }
    
-   public Treasure stealTreasure(){
-   }
+   //public Treasure stealTreasure(){
+   //}
    
    public void setEnemy(Player enemy){
        this.enemy=enemy;
    }
    
-   private Treasure giveMeATreasure(){
-   }
+   //private Treasure giveMeATreasure(){
+   //}
    
    public boolean canISteal(){
-       return canlSteal;
+       return canISteal;
    }
    
    private boolean canYouGiveMeATreasure(){
@@ -138,6 +138,7 @@ public class Player {
    }
    
    private void haveStolen(){
+       canISteal=false;
    }
    
    public void discardAllTreasures(){

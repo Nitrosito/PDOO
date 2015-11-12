@@ -102,9 +102,9 @@ public class BadConsequence {
         this.death=false;
     }
         
-    BadConsequence adjustToFitTreasureList(ArrayList<TreasureKind> visible, ArrayList<TreasureKind> hidden){
+   // BadConsequence adjustToFitTreasureList(ArrayList<TreasureKind> visible, ArrayList<TreasureKind> hidden){
         //
-    }
+   // }
     
     
     public String toString(){

@@ -35,58 +35,58 @@ public class Napakalaki {
         return instance;
     }
     
-    private void initPlayers(ArrayList<String> nombres){
+    //private void initPlayers(ArrayList<String> nombres){
        ///
-    }
+    //}
     
-    private Player nextPlayer(){
+    //private Player nextPlayer(){
         ///
-    }
+    //}
     
-    private boolean nextTurnAllowed(){
+    //private boolean nextTurnAllowed(){
         //
-    }
+    //}
     
-    private void setEnemies(){
+   //private void setEnemies(){
         //
-    }
+    //}
     
     
-    public CombatResult developCombat(){
+   // public CombatResult developCombat(){
         //
-    }
+    //}
     
-    public void discardVisibleTreasures(ArrayList<Treasure> treasures){
+    //public void discardVisibleTreasures(ArrayList<Treasure> treasures){
         //
-    }
+    //}
     
-    public void discardHiddenTreasures(ArrayList<Treasures> treasures){
+    //public void discardHiddenTreasures(ArrayList<Treasures> treasures){
         //
-    }
+   // }
     
-    public void makeTreasuresVisible(ArrayList<Treasures> treasures){
+    //public void makeTreasuresVisible(ArrayList<Treasures> treasures){
         //
-    }
+    //}
     
-    public void initGame(ArrayLIst<String> players){
+    //public void initGame(ArrayLIst<String> players){
         //
-    }
+    //}
     
-    public Player getCurrentPlayers(){
+    //public Player getCurrentPlayers(){
         //
-    }
+    //}
     
-    public Monster getCurrentMonster(){
+    //public Monster getCurrentMonster(){
         //
-    }
+    //}
     
-    public boolean nextTurn(){
+    //public boolean nextTurn(){
         //
-    }
+    //}
     
-    public boolean endOfGame(CombatResult result){
+    //public boolean endOfGame(CombatResult result){
         //
-    }
+    //}
     
     
     
