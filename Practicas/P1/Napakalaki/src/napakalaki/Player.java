@@ -6,6 +6,7 @@
 package napakalaki;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -126,8 +127,14 @@ public class Player {
        this.enemy=enemy;
    }
    
-   //private Treasure giveMeATreasure(){
-   //}
+   private Treasure giveMeATreasure(){  
+        Random rnd = new Random();
+        int numero;                             
+            numero = (int)(rnd.nextDouble() * (hiddenTreasures.size()) + 0); // Cogemos aleatorio
+            Treasure aux = hiddenTreasures.get(numero); // lo guardamos
+            hiddenTreasures.remove(numero); // lo borramos de los invisibles
+            return aux; // Devolvemos el guardado
+   }
    
    public boolean canISteal(){
        return canISteal;
