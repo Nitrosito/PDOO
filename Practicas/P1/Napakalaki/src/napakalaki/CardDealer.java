@@ -284,9 +284,23 @@ public class CardDealer {
         }
     }
     
-//    public Monster nextMonster(){
-//        //
-//    }
+    public Monster nextMonster(){
+        if(unusedMonster.size() !=0){
+            Monster a_usar=unusedMonster.get(unusedMonster.size());
+            unusedMonster.remove(unusedMonster.size());
+            return a_usar;
+        }else{
+            for(int i=0; i<usedMonster.size();i++){
+                Monster aux=usedMonster.get(i);
+                unusedMonster.add(aux);
+            }
+            usedMonster.clear();
+            Collections.shuffle(unusedMonster);
+            Monster a_usar=unusedMonster.get(unusedMonster.size());
+            unusedMonster.remove(unusedMonster.size());
+            return a_usar;
+        }
+    }
     
     public void giveTreasureBack(Treasure t){
        // usedTreasures.add(t);
