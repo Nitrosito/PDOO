@@ -6,6 +6,7 @@
 package napakalaki;
 
 import java.util.ArrayList;
+import static napakalaki.CombatResult.WINGAME;
 
 /**
  *
@@ -35,58 +36,64 @@ public class Napakalaki {
         return instance;
     }
     
-    //private void initPlayers(ArrayList<String> nombres){
-       ///
-    //}
+    private void initPlayers(ArrayList<String> nombres){
+       for(int i=0; i< nombres.size();i++){
+           Player aux= new Player(nombres.get(i));
+           players.add(aux);
+       }
+    }
+//    
+//    private Player nextPlayer(){
+//        ///
+//    }
+//    
+//    private boolean nextTurnAllowed(){
+//        //
+//    }
+//    
+//    private void setEnemies(){
+//        //
+//    }
+//    
+//    
+//    public CombatResult developCombat(){
+//        //
+//    }
+//    
+//    public void discardVisibleTreasures(ArrayList<Treasure> treasures){
+//        //
+//    }
+//    
+//    public void discardHiddenTreasures(ArrayList<Treasures> treasures){
+//        //
+//    }
+//    
+//    public void makeTreasuresVisible(ArrayList<Treasures> treasures){
+//        //
+//    }
+//    
+//    public void initGame(ArrayLIst<String> players){
+//        //
+//    }
+//    
+    public Player getCurrentPlayer(){
+        return currentPlayer;
+    }
     
-    //private Player nextPlayer(){
-        ///
-    //}
-    
-    //private boolean nextTurnAllowed(){
-        //
-    //}
-    
-   //private void setEnemies(){
-        //
-    //}
-    
-    
-   // public CombatResult developCombat(){
-        //
-    //}
-    
-    //public void discardVisibleTreasures(ArrayList<Treasure> treasures){
-        //
-    //}
-    
-    //public void discardHiddenTreasures(ArrayList<Treasures> treasures){
-        //
-   // }
-    
-    //public void makeTreasuresVisible(ArrayList<Treasures> treasures){
-        //
-    //}
-    
-    //public void initGame(ArrayLIst<String> players){
-        //
-    //}
-    
-    //public Player getCurrentPlayers(){
-        //
-    //}
-    
-    //public Monster getCurrentMonster(){
-        //
-    //}
-    
-    //public boolean nextTurn(){
-        //
-    //}
-    
-    //public boolean endOfGame(CombatResult result){
-        //
-    //}
+    public Monster getCurrentMonster(){
+        return currentMonster;
+    }
+//    
+//    public boolean nextTurn(){
+//        //
+//    }
+//    
+    public boolean endOfGame(CombatResult result){
+        if(result==WINGAME){
+            return true;
+        }
+        return false;
+    }
     
     
     
