@@ -37,23 +37,32 @@ public class Napakalaki {
     }
     
     private void initPlayers(ArrayList<String> nombres){
-       for(int i=0; i< nombres.size();i++){
-           Player aux= new Player(nombres.get(i));
-           players.add(aux);
-       }
+        for (String nombre : nombres) {
+            Player aux = new Player(nombre);
+            players.add(aux);
+        }
     }
 //    
 //    private Player nextPlayer(){
 //        ///
 //    }
 //    
-//    private boolean nextTurnAllowed(){
-//        //
-//    }
-//    
-//    private void setEnemies(){
-//        //
-//    }
+    private boolean nextTurnAllowed(){
+        if(currentPlayer.validState()){
+            return true;
+        }
+        return false;
+    }
+    
+    private void setEnemies(){
+         int ind = (int)(Math.random()*players.size());
+         for(int i = 0; i < players.size(); i++){
+         while(ind == i)
+            ind = (int)(Math.random()*players.size());
+         players.set(i, players.get(ind));
+ }
+
+    }
 //    
 //    
 //    public CombatResult developCombat(){
@@ -89,10 +98,7 @@ public class Napakalaki {
 //    }
 //    
     public boolean endOfGame(CombatResult result){
-        if(result==WINGAME){
-            return true;
-        }
-        return false;
+        return result==WINGAME;
     }
     
     
