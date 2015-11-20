@@ -6,6 +6,10 @@
 package napakalaki;
 
 import java.util.ArrayList;
+import static napakalaki.TreasureKind.ARMOR;
+import static napakalaki.TreasureKind.BOTHHANDS;
+import static napakalaki.TreasureKind.ONEHAND;
+import static napakalaki.TreasureKind.SHOES;
 
 /**
  *
@@ -16,7 +20,7 @@ public class Player {
    private String name;
    private int level=1;
    private boolean dead=true;
-   private boolean canlSteal=true;
+   private boolean canISteal=true;
    private Player enemy;
    private ArrayList<Treasure> hiddenTreasures=new ArrayList();
    private ArrayList<Treasure> visibleTreasures=new ArrayList();
@@ -31,8 +35,12 @@ public class Player {
        return name;
    }
    
+   public String toString(){
+       return "Nombre jugador: " + this.name;
+   }
+   
    private void bringToLife(){
-       dead=true;
+       dead=false;
    }
    
    private int getCombatLevel(){
@@ -72,10 +80,43 @@ public class Player {
    }
    
    private boolean canMakeTreasureVisible(Treasure t){
+       int numero_ONEHAND=0;
+       int numero_BOTHHANDS=0;
+       int numero_ARMOR=0;
+       int numero_SHOES=0;
+       int numero_HELMET=0;
+       for (Treasure aux : visibleTreasures) {
+           if(aux.getType() == ONEHAND){
+               numero_ONEHAND++;
+           }else if(aux.getType() == BOTHHANDS){
+               numero_BOTHHANDS++;
+           }else if(aux.getType() == ARMOR){
+               numero_ARMOR++;
+           }else if(aux.getType() == SHOES){
+               numero_SHOES++;
+           }else{
+               numero_HELMET++;
+           }
+       }
+       if(t.getType()==ONEHAND){
+           if(numero_ONEHAND==2){
+               return false;
+           }else return numero_BOTHHANDS != 1;
+       }else if(t.getType()==BOTHHANDS){
+           if(numero_BOTHHANDS==1){
+               return false;
+           }else return numero_ONEHAND == 0;
+       }else if(t.getType()==ARMOR){
+           return numero_ARMOR != 1;
+       }else if(t.getType()==SHOES){
+           return numero_SHOES != 1;
+       }else{
+           return numero_HELMET != 1;
+       }
    }
    
-   private int howManyVisibleTreasures(TreasureKind tKind){
-   }
+//   private int howManyVisibleTreasures(TreasureKind tKind){
+//   }
    
    private void dielNoTreasures(){
        if(visibleTreasures.size()==0 && hiddenTreasures.size()==0){
@@ -87,16 +128,17 @@ public class Player {
        return dead;
    }
    
-   public ArrayList<Treasure> getHiddenTreasure(){
-   }
+//   public ArrayList<Treasure> getHiddenTreasure(){
+//   }
    
-   public ArrayList<Treasure> getVisibleTreasure(){
-   }
+//   public ArrayList<Treasure> getVisibleTreasure(){
+//   }
    
-   public CombatResult combat(Monster m){
-   }
+//   public CombatResult combat(Monster m){
+//   }
    
    public void makeTreasureVisible(Treasure t){
+       
    }
    
    public void discardVisibleTreasure(Treasure t){
@@ -119,18 +161,18 @@ public class Player {
        return level;
    }
    
-   public Treasure stealTreasure(){
-   }
+//   public Treasure stealTreasure(){
+//   }
    
    public void setEnemy(Player enemy){
        this.enemy=enemy;
    }
    
-   private Treasure giveMeATreasure(){
-   }
+//   private Treasure giveMeATreasure(){
+//   }
    
    public boolean canISteal(){
-       return canlSteal;
+       return canISteal;
    }
    
    private boolean canYouGiveMeATreasure(){
@@ -138,6 +180,7 @@ public class Player {
    }
    
    private void haveStolen(){
+       canISteal=false;
    }
    
    public void discardAllTreasures(){
