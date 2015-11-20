@@ -6,6 +6,7 @@
 package napakalaki;
 
 import java.util.ArrayList;
+import java.util.Random;
 import static napakalaki.CombatResult.WINGAME;
 
 /**
@@ -37,15 +38,33 @@ public class Napakalaki {
     }
     
     private void initPlayers(ArrayList<String> nombres){
-       for(int i=0; i< nombres.size();i++){
-           Player aux= new Player(nombres.get(i));
-           players.add(aux);
-       }
+        for (String nombre : nombres) {
+            Player aux = new Player(nombre);
+            players.add(aux);
+        }
     }
-//    
-//    private Player nextPlayer(){
-//        ///
-//    }
+    
+    private Player nextPlayer(){
+        if(currentPlayer==null){ // si es la primera jugada
+            Random rnd = new Random();
+            int numero;                             //random number njug y 0
+                numero = (int)(rnd.nextDouble() * (players.size()) + 0);
+            currentPlayer=players.get(numero);
+            return players.get(numero);
+        }
+        
+        // si no es la primera jugada y le toca al ultimo
+        if(currentPlayer == players.get(players.size()-1)){ // Si le toca al ultimo
+           currentPlayer = players.get(0);
+           return players.get(0); // devolvemos el 1º
+        }
+        
+        // si le toca al ultimo , devolvemos siguiente
+        int nplayer = players.indexOf(currentPlayer);
+        currentPlayer = players.get(nplayer+1);
+        return players.get(nplayer+1);    
+    }
+
 //    
 //    private boolean nextTurnAllowed(){
 //        //
