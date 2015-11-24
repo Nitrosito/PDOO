@@ -54,11 +54,29 @@ public class BadConsequence {
     }
     
     void substractVisibleTreasure(Treasure t){
-        //
+         boolean esta = false;
+        int ind;
+        for(ind = 0; ind < specificVisibleTreasures.size(); ind++){
+            if(t.getType() == specificVisibleTreasures.get(ind))
+                esta = true;
+        }
+        if(esta)
+           specificVisibleTreasures.remove(ind);
+        else if (nVisibleTreasures > 0)
+            nVisibleTreasures -= 1;
     }
     
     void substractHiddenTreasure(Treasure t){
-        //
+                 boolean esta = false;
+        int ind;
+        for(ind = 0; ind < specificVisibleTreasures.size(); ind++){
+            if(t.getType() == specificVisibleTreasures.get(ind))
+                esta = true;
+        }
+        if(esta)
+           specificHiddenTreasures.remove(ind);
+        else if (nHiddenTreasures > 0)
+            nHiddenTreasures -= 1;
     }
     
     

@@ -91,9 +91,13 @@ public class Napakalaki {
 //        //
 //    }
 //    
-//    public void initGame(ArrayLIst<String> players){
-//        //
-//    }
+    public void initGame(ArrayList<String> players){
+        this.initPlayers(players);
+        this.setEnemies();
+        this.nextTurn();
+        dealer.initCards();   
+        nextTurn();
+    }
 //    
     public Player getCurrentPlayer(){
         return currentPlayer;
