@@ -263,15 +263,31 @@ public class CardDealer {
         Collections.shuffle(unusedMonster);
     }
    
+     
+    public Treasure nextTreasure(){
+        if(unusedTreasures.isEmpty()){
+            unusedTreasures=usedTreasures;
+            shuffleTreasure();
+            usedTreasures.clear();
+        }
+        
+        Treasure salida = unusedTreasures.get(0);
+        unusedTreasures.remove(0);
+        return salida;
+    }
     
-    //Public    
-    //public Treasure nextTreasure(){
-        //
-    //}
-    
-    //public Monster nextMonster(){
-        //
-    //}
+    public Monster nextMonster(){
+        if(unusedMonster.isEmpty()){
+            unusedMonster=usedMonster;
+            shuffleMonster();
+            usedMonster.clear();
+        }
+        
+        Monster salida;
+        salida = unusedMonster.get(0);
+        unusedMonster.remove(0);
+        return salida;
+    }
     
     public void giveTreasureBack(Treasure t){
         usedTreasures.add(t);
