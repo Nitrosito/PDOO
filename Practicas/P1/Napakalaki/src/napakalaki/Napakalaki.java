@@ -65,16 +65,14 @@ public class Napakalaki {
         return players.get(nplayer+1);    
     }
 
-//    
-//    private boolean nextTurnAllowed(){
-//        //
-//    }
-//    
-//    private void setEnemies(){
-//        //
-//    }
-//    
-//    
+    private boolean nextTurnAllowed(){
+        if(currentPlayer.validState()){
+            return true;
+        }
+        return false;
+    }
+    
+    
 //    public CombatResult developCombat(){
 //        //
 //    }
@@ -105,8 +103,7 @@ public class Napakalaki {
          while(ind == i)
             ind = (int)(Math.random()*players.size());
          players.set(i, players.get(ind));
- }
-
+        }
     }
 //    
 //    
