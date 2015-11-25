@@ -268,7 +268,7 @@ public class CardDealer {
     public Treasure nextTreasure(){
         if(unusedTreasures.isEmpty()){
             unusedTreasures=usedTreasures;
-            shuffleTreasure();
+            shuffleTreasures();
             usedTreasures.clear();
         }
         
@@ -280,7 +280,7 @@ public class CardDealer {
     public Monster nextMonster(){
         if(unusedMonster.isEmpty()){
             unusedMonster=usedMonster;
-            shuffleMonster();
+            shuffleMonsters();
             usedMonster.clear();
         }
         
