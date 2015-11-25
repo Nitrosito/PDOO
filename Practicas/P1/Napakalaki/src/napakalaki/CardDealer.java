@@ -272,8 +272,8 @@ public class CardDealer {
             usedTreasures.clear();
         }
         
-        Treasure salida = unusedTreasures.get(0);
-        unusedTreasures.remove(0);
+        Treasure salida = unusedTreasures.get(unusedTreasures.size()-1);
+        unusedTreasures.remove(unusedTreasures.size()-1);
         return salida;
     }
     
@@ -285,8 +285,8 @@ public class CardDealer {
         }
         
         Monster salida;
-        salida = unusedMonster.get(0);
-        unusedMonster.remove(0);
+        salida = unusedMonster.get(unusedMonster.size()-1);
+        unusedMonster.remove(unusedMonster.size()-1);
         return salida;
     }
     
