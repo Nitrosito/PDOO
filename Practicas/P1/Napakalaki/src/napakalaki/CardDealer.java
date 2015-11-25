@@ -20,6 +20,7 @@ public class CardDealer {
     private ArrayList<Treasure> unusedTreasures;
     private ArrayList<Monster> usedMonster;
     private ArrayList<Monster> unusedMonster;
+    private Player favourite;
     
     
     private CardDealer(){
@@ -255,26 +256,45 @@ public class CardDealer {
             unusedMonster.add(new Monster("Bicéfalo",20,badConsequence,prize));
     }
     
-    private void shuffleTreasure(){
+    private void shuffleTreasures(){
         Collections.shuffle(unusedTreasures);
     }
     
-    private void shuffleMonster(){
+    private void shuffleMonsters(){
         Collections.shuffle(unusedMonster);
     }
    
-    
-    //Public    
+     
     public Treasure nextTreasure(){
-        //
+        if(unusedTreasures.isEmpty()){
+            unusedTreasures=usedTreasures;
+            shuffleTreasure();
+            usedTreasures.clear();
+        }
+        
+        Treasure salida = unusedTreasures.get(0);
+        unusedTreasures.remove(0);
+        return salida;
     }
     
     public Monster nextMonster(){
-        //
+        if(unusedMonster.isEmpty()){
+            unusedMonster=usedMonster;
+            shuffleMonster();
+            usedMonster.clear();
+        }
+        
+        Monster salida;
+        salida = unusedMonster.get(0);
+        unusedMonster.remove(0);
+        return salida;
     }
     
     public void giveTreasureBack(Treasure t){
-        usedTreasures.add(t);
+       // usedTreasures.add(t);
+        if(t.getBonus()>3){
+            favourite.makeTreasureVisible(t);
+        }
     }
     
     public void giveMonsterBack(Monster m){
@@ -283,6 +303,10 @@ public class CardDealer {
     
     public void initCards(){
         //
+    }
+    
+    public void setPlayer(Player p){
+        favourite=p;
     }
     
     
