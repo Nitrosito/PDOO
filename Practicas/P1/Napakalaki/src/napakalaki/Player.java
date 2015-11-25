@@ -6,6 +6,7 @@
 package napakalaki;
 
 import java.util.ArrayList;
+import java.util.Random;
 import static napakalaki.TreasureKind.ARMOR;
 import static napakalaki.TreasureKind.BOTHHANDS;
 import static napakalaki.TreasureKind.ONEHAND;
