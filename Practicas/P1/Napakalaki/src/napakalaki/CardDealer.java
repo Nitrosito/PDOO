@@ -20,6 +20,7 @@ public class CardDealer {
     private ArrayList<Treasure> unusedTreasures;
     private ArrayList<Monster> usedMonster;
     private ArrayList<Monster> unusedMonster;
+    private Player favourite;
     
     
     private CardDealer(){
@@ -255,11 +256,11 @@ public class CardDealer {
             unusedMonster.add(new Monster("Bicéfalo",20,badConsequence,prize));
     }
     
-    private void shuffleTreasure(){
+    private void shuffleTreasures(){
         Collections.shuffle(unusedTreasures);
     }
     
-    private void shuffleMonster(){
+    private void shuffleMonsters(){
         Collections.shuffle(unusedMonster);
     }
    
@@ -290,7 +291,10 @@ public class CardDealer {
     }
     
     public void giveTreasureBack(Treasure t){
-        usedTreasures.add(t);
+       // usedTreasures.add(t);
+        if(t.getBonus()>3){
+            favourite.makeTreasureVisible(t);
+        }
     }
     
     public void giveMonsterBack(Monster m){
@@ -301,20 +305,9 @@ public class CardDealer {
         //
     }
     
-    /*
-    public Monster mayorNivel(){
-        BadConsequence badConsequence = new BadConsequence("La familia te atrapa. Est́as muerto",true);
-        Prize prize = new Prize(4,1);
-        Monster mayornivel = new Monster("Clean",0,badConsequence,prize);
-        initMonsterCardDeck();
-        
-        for (Monster unusedMonster1 : unusedMonster) {
-            if(unusedMonster1.getCombatLevel() > mayornivel.getCombatLevel())
-                mayornivel=unusedMonster1;
-        }
-        return mayornivel;
+    public void setPlayer(Player p){
+        favourite=p;
     }
-    */
     
     
     

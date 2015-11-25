@@ -98,6 +98,37 @@ public class Napakalaki {
         dealer.initCards();   
         nextTurn();
     }
+    
+    private void setEnemies(){
+         int ind = (int)(Math.random()*players.size());
+         for(int i = 0; i < players.size(); i++){
+         while(ind == i)
+            ind = (int)(Math.random()*players.size());
+         players.set(i, players.get(ind));
+ }
+
+    }
+//    
+//    
+//    public CombatResult developCombat(){
+//        //
+//    }
+//    
+//    public void discardVisibleTreasures(ArrayList<Treasure> treasures){
+//        //
+//    }
+//    
+//    public void discardHiddenTreasures(ArrayList<Treasures> treasures){
+//        //
+//    }
+//    
+//    public void makeTreasuresVisible(ArrayList<Treasures> treasures){
+//        //
+//    }
+//    
+//    public void initGame(ArrayLIst<String> players){
+//        //
+//    }
 //    
     public Player getCurrentPlayer(){
         return currentPlayer;
@@ -112,10 +143,7 @@ public class Napakalaki {
 //    }
 //    
     public boolean endOfGame(CombatResult result){
-        if(result==WINGAME){
-            return true;
-        }
-        return false;
+        return result==WINGAME;
     }
     
     
