@@ -134,11 +134,23 @@ public class Napakalaki {
     public Monster getCurrentMonster(){
         return currentMonster;
     }
-//    
-//    public boolean nextTurn(){
-//        //
-//    }
-//    
+
+    public boolean nextTurn(){
+        boolean stateOK = nextTurnAllowed();
+        
+        if(stateOK){
+           currentMonster = dealer.nextMonster();
+           currentPlayer = nextPlayer();
+           boolean dead = currentPlayer.isDead();
+           
+           if(dead){
+               currentPlayer.initTreasures();
+           }
+        }
+        return stateOK;
+    }
+    
+    
     public boolean endOfGame(CombatResult result){
         return result==WINGAME;
     }
