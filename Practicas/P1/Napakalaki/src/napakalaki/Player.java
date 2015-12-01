@@ -6,6 +6,10 @@
 package napakalaki;
 
 import java.util.ArrayList;
+import java.util.Random;
+import static napakalaki.CombatResult.LOSE;
+import static napakalaki.CombatResult.WIN;
+import static napakalaki.CombatResult.WINGAME;
 import static napakalaki.TreasureKind.ARMOR;
 import static napakalaki.TreasureKind.BOTHHANDS;
 import static napakalaki.TreasureKind.ONEHAND;
@@ -74,9 +78,26 @@ public class Player {
    }
    
    private void applyPrize(Monster m){
+       int nLevels = m.getLevelsGained();
+       incrementLevels(nLevels);
+       int nTreasures = m.getTreasuresGained();
+       if(nTreasures >0){
+           CardDealer dealer = CardDealer.getInstance();
+           for(int i=0; i<nTreasures; i++){
+               Treasure aux;
+               aux= dealer.nextTreasure();
+               hiddenTreasures.add(aux);
+           }
+           
+       }
    }
    
    private void applyBadConsequence(Monster m){
+       BadConsequence badConsequence = m.getBadconsequence();
+       int nLevels = badConsequence.getLevels();
+       decrementLevels(nLevels);
+       BadConsequence pendingBad = badConsequence.adjustToFitTreasureList(visibleTreasures, hiddenTreasures);
+       setPendingBadConsequence(pendingBad);
    }
    
    private boolean canMakeTreasureVisible(Treasure t){
@@ -134,17 +155,46 @@ public class Player {
 //   public ArrayList<Treasure> getVisibleTreasure(){
 //   }
    
-//   public CombatResult combat(Monster m){
-//   }
+   public CombatResult combat(Monster m){
+       int myLevel=getCombatLevel();
+       int monsterLevel=m.getCombatLevel();
+       if(myLevel>monsterLevel){
+           applyPrize(m);
+           if(level>=MAXLEVEL){
+               return WINGAME;
+           }else{
+               return WIN;
+           }
+       }else{
+           applyBadConsequence(m);
+           return LOSE;
+       }
+   }
    
    public void makeTreasureVisible(Treasure t){
-       
+       boolean canI=canMakeTreasureVisible(t);
+       if(canI){
+           visibleTreasures.add(t);
+       }else{
+           hiddenTreasures.remove(t);
+       }
    }
    
    public void discardVisibleTreasure(Treasure t){
+       visibleTreasures.remove(t);
+       
+       if(pendingBadConsequence!=null && !pendingBadConsequence.isEmpty())
+           pendingBadConsequence.substractVisibleTreasure(t);
+   
+       dielNoTreasures();
    }
    
    public void discardHiddenTreasure(Treasure t){
+       hiddenTreasures.remove(t);
+       if(pendingBadConsequence==null && (!pendingBadConsequence.isEmpty())){
+           pendingBadConsequence.substractHiddenTreasure(t);
+       }
+       dielNoTreasures();
    }
    
    public boolean validState(){
@@ -155,14 +205,41 @@ public class Player {
    }
    
    public void initTreasures(){
+       CardDealer dealer= CardDealer.getInstance();
+       Dice dice= Dice.getInstance();
+       bringToLife();
+       Treasure treasure=dealer.nextTreasure();
+       hiddenTreasures.add(treasure);
+       int number = dice.nextNumber();
+       
+       if(number>1){
+           Treasure treasure1 = dealer.nextTreasure();
+           hiddenTreasures.add(treasure1);
+       }
+       
+       if(number==6){
+           Treasure treasure1= dealer.nextTreasure();
+           hiddenTreasures.add(treasure1);
+       }
    }
    
    public int getLevels(){
        return level;
    }
    
-//   public Treasure stealTreasure(){
-//   }
+   public Treasure stealTreasure(){
+       boolean canI = canISteal();
+       if(canI){
+           boolean canYou = enemy.canYouGiveMeATreasure();
+           if(canYou){
+               Treasure treasure = enemy.giveMeATreasure();
+               hiddenTreasures.add(treasure);
+               haveStolen();
+               return treasure;
+           }
+       }
+       return null;
+   }
    
    public void setEnemy(Player enemy){
        this.enemy=enemy;
@@ -190,5 +267,33 @@ public class Player {
    }
    
    public void discardAllTreasures(){
+       for(Treasure treasure: visibleTreasures){
+           discardVisibleTreasure(treasure);
+       }
+       for(Treasure treasure: hiddenTreasures){
+           discardHiddenTreasure(treasure);
+       }
    }
+
+   public CombatResult combat(Monster m) {
+        CombatResult resultadoCombate = null;
+        int mylevel = getCombatLevel();
+        int monsterLevel= m.getCombatLevel();
+                
+        if(mylevel>monsterLevel){
+            this.applyPrize(m);
+            if(this.getLevels()>=MAXLEVEL)
+                resultadoCombate = CombatResult.WINGAME;
+            else
+                resultadoCombate = CombatResult.WIN;
+            
+        
+        }
+        
+        else{
+            this.applyBadConsequence(m);
+            resultadoCombate = CombatResult.LOSE;
+        }
+        return resultadoCombate;
+    }
 }
