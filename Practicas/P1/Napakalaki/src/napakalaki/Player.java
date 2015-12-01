@@ -96,7 +96,7 @@ public class Player {
        BadConsequence badConsequence = m.getBadconsequence();
        int nLevels = badConsequence.getLevels();
        decrementLevels(nLevels);
-       BadConsequence pendingBad = badConsequence.adjustToFitTreasureList(visibleTreasures, hiddenTreasures);
+       BadConsequence pendingBad = badConsequence.adjustToFitTreasureLists(visibleTreasures, hiddenTreasures);
        setPendingBadConsequence(pendingBad);
    }
    
@@ -275,25 +275,4 @@ public class Player {
        }
    }
 
-   public CombatResult combat(Monster m) {
-        CombatResult resultadoCombate = null;
-        int mylevel = getCombatLevel();
-        int monsterLevel= m.getCombatLevel();
-                
-        if(mylevel>monsterLevel){
-            this.applyPrize(m);
-            if(this.getLevels()>=MAXLEVEL)
-                resultadoCombate = CombatResult.WINGAME;
-            else
-                resultadoCombate = CombatResult.WIN;
-            
-        
-        }
-        
-        else{
-            this.applyBadConsequence(m);
-            resultadoCombate = CombatResult.LOSE;
-        }
-        return resultadoCombate;
-    }
 }
