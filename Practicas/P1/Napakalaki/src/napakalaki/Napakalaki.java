@@ -65,16 +65,13 @@ public class Napakalaki {
         return players.get(nplayer+1);    
     }
 
-//    
-//    private boolean nextTurnAllowed(){
-//        //
-//    }
-//    
-//    private void setEnemies(){
-//        //
-//    }
-//    
-//    
+    
+    private boolean nextTurnAllowed(){
+            return currentPlayer.validState();
+
+    }
+
+   
 //    public CombatResult developCombat(){
 //        //
 //    }
@@ -108,24 +105,35 @@ public class Napakalaki {
  }
 
     }
-//    
-//    
-//    public CombatResult developCombat(){
-//        //
-//    }
-//    
-//    public void discardVisibleTreasures(ArrayList<Treasure> treasures){
-//        //
-//    }
-//    
-//    public void discardHiddenTreasures(ArrayList<Treasures> treasures){
-//        //
-//    }
-//    
-//    public void makeTreasuresVisible(ArrayList<Treasures> treasures){
-//        //
-//    }
-//    
+   
+    
+    public CombatResult developCombat(){
+        CombatResult aux;
+        aux=currentPlayer.combat(currentMonster);
+        dealer.giveMonsterBack(currentMonster);
+        return aux;
+    }
+    
+    public void discardVisibleTreasures(ArrayList<Treasure> treasures){
+        for (Treasure treasure: treasures){
+            currentPlayer.discardVisibleTreasure(treasure);
+            dealer.giveTreasureBack(treasure);
+        }
+    }
+    
+    public void discardHiddenTreasures(ArrayList<Treasure> treasures){
+        for(Treasure treasure: treasures){
+            currentPlayer.discardHiddenTreasure(treasure);
+            dealer.giveTreasureBack(treasure);
+        }
+    }
+    
+    public void makeTreasuresVisible(ArrayList<Treasure> treasures){
+       for(Treasure treasure: treasures){
+           currentPlayer.makeTreasureVisible(treasure);
+       }         
+    }
+    
 //    public void initGame(ArrayLIst<String> players){
 //        //
 //    }
@@ -137,11 +145,20 @@ public class Napakalaki {
     public Monster getCurrentMonster(){
         return currentMonster;
     }
-//    
-//    public boolean nextTurn(){
-//        //
-//    }
-//    
+    
+    public boolean nextTurn(){
+        boolean stateOK=nextTurnAllowed();
+        if(stateOK){
+            currentMonster=dealer.nextMonster();
+            currentPlayer=nextPlayer();
+            boolean dead=currentPlayer.isDead();
+            if(dead){
+                currentPlayer.initTreasures();
+            }
+        }
+        return stateOK;
+    }
+    
     public boolean endOfGame(CombatResult result){
         return result==WINGAME;
     }

@@ -69,8 +69,8 @@ public class BadConsequence {
     void substractHiddenTreasure(Treasure t){
                  boolean esta = false;
         int ind;
-        for(ind = 0; ind < specificVisibleTreasures.size(); ind++){
-            if(t.getType() == specificVisibleTreasures.get(ind))
+        for(ind = 0; ind < specificHiddenTreasures.size(); ind++){
+            if(t.getType() == specificHiddenTreasures.get(ind))
                 esta = true;
         }
         if(esta)
@@ -120,9 +120,10 @@ public class BadConsequence {
         this.death=false;
     }
         
-   // BadConsequence adjustToFitTreasureList(ArrayList<TreasureKind> visible, ArrayList<TreasureKind> hidden){
-        //
-   // }
+    BadConsequence adjustToFitTreasureList(ArrayList<Treasure> visible, ArrayList<Treasure> hidden){
+        BadConsequence bad=new BadConsequence("prueba",true);
+        return bad;
+    }
     
     
     public String toString(){
