@@ -97,7 +97,7 @@ public class Napakalaki {
          for(int i = 0; i < players.size(); i++){
          while(ind == i)
             ind = (int)(Math.random()*players.size());
-         players.set(i, players.get(ind));
+         players.get(i).setEnemy(players.get(ind));
         }
     }
    
@@ -155,20 +155,7 @@ public class Napakalaki {
         }
         return stateOK;
     }
-    
-    
-    public boolean nextTurn(){
-        boolean stateOK=nextTurnAllowed();
-        if(stateOK){
-            currentMonster=dealer.nextMonster();
-            currentPlayer=nextPlayer();
-            boolean dead=currentPlayer.isDead();
-            if(dead){
-                currentPlayer.initTreasures();
-            }
-        }
-        return stateOK;
-    }
+
     
     public boolean endOfGame(CombatResult result){
         return result==WINGAME;
