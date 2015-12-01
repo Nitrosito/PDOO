@@ -83,11 +83,7 @@ public class Napakalaki {
 //    public void discardHiddenTreasures(ArrayList<Treasures> treasures){
 //        //
 //    }
-//    
-//    public void makeTreasuresVisible(ArrayList<Treasures> treasures){
-//        //
-//    }
-//    
+    
     public void initGame(ArrayList<String> players){
         this.initPlayers(players);
         this.setEnemies();

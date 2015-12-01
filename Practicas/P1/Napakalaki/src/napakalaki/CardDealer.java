@@ -302,7 +302,8 @@ public class CardDealer {
     }
     
     public void initCards(){
-        //
+        initTreasureCardDeck();
+        initMonsterCardDeck();
     }
     
     public void setPlayer(Player p){
