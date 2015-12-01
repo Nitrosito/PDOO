@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package napakalaki;
+package NapakalakiGame;
 
 import java.util.ArrayList;
 import java.util.Random;
-import static napakalaki.CombatResult.LOSE;
-import static napakalaki.CombatResult.WIN;
-import static napakalaki.CombatResult.WINGAME;
-import static napakalaki.TreasureKind.ARMOR;
-import static napakalaki.TreasureKind.BOTHHANDS;
-import static napakalaki.TreasureKind.ONEHAND;
-import static napakalaki.TreasureKind.SHOES;
+import static NapakalakiGame.CombatResult.LOSE;
+import static NapakalakiGame.CombatResult.WIN;
+import static NapakalakiGame.CombatResult.WINGAME;
+import static NapakalakiGame.TreasureKind.ARMOR;
+import static NapakalakiGame.TreasureKind.BOTHHANDS;
+import static NapakalakiGame.TreasureKind.ONEHAND;
+import static NapakalakiGame.TreasureKind.SHOES;
 
 /**
  *
@@ -33,6 +33,7 @@ public class Player {
    static final int MAXLEVEL=10;
    
    public Player(String name){
+       this.name=name;
    }
    
    public String getName(){
@@ -149,11 +150,13 @@ public class Player {
        return dead;
    }
    
-//   public ArrayList<Treasure> getHiddenTreasure(){
-//   }
+public ArrayList<Treasure> getHiddenTreasures(){
+    return hiddenTreasures;
+}
    
-//   public ArrayList<Treasure> getVisibleTreasure(){
-//   }
+public ArrayList<Treasure> getVisibleTreasures(){
+    return visibleTreasures;
+}
    
    public CombatResult combat(Monster m){
        int myLevel=getCombatLevel();

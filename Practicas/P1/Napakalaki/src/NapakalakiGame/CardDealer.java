@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package napakalaki;
+package NapakalakiGame;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -285,7 +285,7 @@ public class CardDealer {
         }
         
         Monster salida;
-        salida = unusedMonster.get(unusedMonster.size()-1);
+        salida = unusedMonster.get((unusedMonster.size()-1));
         unusedMonster.remove(unusedMonster.size()-1);
         return salida;
     }

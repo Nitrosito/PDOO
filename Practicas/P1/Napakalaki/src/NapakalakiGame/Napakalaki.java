@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package napakalaki;
+package NapakalakiGame;
 
 import java.util.ArrayList;
 import java.util.Random;
-import static napakalaki.CombatResult.WINGAME;
+import static NapakalakiGame.CombatResult.WINGAME;
 
 /**
  *
@@ -66,9 +66,11 @@ public class Napakalaki {
     }
 
     
-    private boolean nextTurnAllowed(){
+    private boolean nextTurnAllowed(){ // #FIXME #PARCHACO #CHAPUZA #PREGUNTAR #TODO
+                if(currentPlayer == null)
+            return true;
+            
             return currentPlayer.validState();
-
     }
 
    
@@ -87,8 +89,8 @@ public class Napakalaki {
     public void initGame(ArrayList<String> players){
         this.initPlayers(players);
         this.setEnemies();
-        this.nextTurn();
         dealer.initCards();   
+        this.nextTurn();
         nextTurn();
     }
     
