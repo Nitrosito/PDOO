@@ -72,26 +72,13 @@ public class Napakalaki {
             
             return currentPlayer.validState();
     }
-
-   
-//    public CombatResult developCombat(){
-//        //
-//    }
-//    
-//    public void discardVisibleTreasures(ArrayList<Treasure> treasures){
-//        //
-//    }
-//    
-//    public void discardHiddenTreasures(ArrayList<Treasures> treasures){
-//        //
-//    }
-    
+ 
     public void initGame(ArrayList<String> players){
         this.initPlayers(players);
         this.setEnemies();
         dealer.initCards();   
         this.nextTurn();
-        nextTurn();
+        
     }
     
     private void setEnemies(){
@@ -130,11 +117,7 @@ public class Napakalaki {
            currentPlayer.makeTreasureVisible(treasure);
        }         
     }
-    
-//    public void initGame(ArrayLIst<String> players){
-//        //
-//    }
-//    
+        
     public Player getCurrentPlayer(){
         return currentPlayer;
     }

@@ -285,16 +285,16 @@ public class CardDealer {
         }
         
         Monster salida;
-        salida = unusedMonster.get((unusedMonster.size()-1));
+        salida = unusedMonster.get((unusedMonster.size())-1);
         unusedMonster.remove(unusedMonster.size()-1);
         return salida;
     }
     
     public void giveTreasureBack(Treasure t){
-       // usedTreasures.add(t);
-        if(t.getBonus()>3){
-            favourite.makeTreasureVisible(t);
-        }
+        usedTreasures.add(t);
+        //if(t.getBonus()>3){
+        //    favourite.makeTreasureVisible(t);
+        //}
     }
     
     public void giveMonsterBack(Monster m){
@@ -303,7 +303,9 @@ public class CardDealer {
     
     public void initCards(){
         initTreasureCardDeck();
+        shuffleTreasures();
         initMonsterCardDeck();
+        shuffleMonsters();
     }
     
     public void setPlayer(Player p){

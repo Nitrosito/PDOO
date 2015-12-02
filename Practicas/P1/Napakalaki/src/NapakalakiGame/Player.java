@@ -137,8 +137,14 @@ public class Player {
        }
    }
    
-//   private int howManyVisibleTreasures(TreasureKind tKind){
-//   }
+    private int howManyVisibleTreasures(TreasureKind tKind){
+       int ntesoros=0;
+       for(Treasure tesoros:visibleTreasures){
+           if(tesoros.getType()==tKind)
+               ntesoros+=1;
+       }
+       return ntesoros;
+   }
    
    private void dielNoTreasures(){
        if(visibleTreasures.size()==0 && hiddenTreasures.size()==0){
@@ -178,7 +184,6 @@ public ArrayList<Treasure> getVisibleTreasures(){
        boolean canI=canMakeTreasureVisible(t);
        if(canI){
            visibleTreasures.add(t);
-       }else{
            hiddenTreasures.remove(t);
        }
    }
@@ -194,7 +199,7 @@ public ArrayList<Treasure> getVisibleTreasures(){
    
    public void discardHiddenTreasure(Treasure t){
        hiddenTreasures.remove(t);
-       if(pendingBadConsequence==null && (!pendingBadConsequence.isEmpty())){
+       if(pendingBadConsequence!=null && (!pendingBadConsequence.isEmpty())){
            pendingBadConsequence.substractHiddenTreasure(t);
        }
        dielNoTreasures();
@@ -273,9 +278,9 @@ public ArrayList<Treasure> getVisibleTreasures(){
        for(Treasure treasure: visibleTreasures){
            discardVisibleTreasure(treasure);
        }
-       for(Treasure treasure: hiddenTreasures){
-           discardHiddenTreasure(treasure);
-       }
+       for(int i=0; i<hiddenTreasures.size();i++){
+           discardHiddenTreasure(hiddenTreasures.get(i));
+       }		        
    }
 
 }
