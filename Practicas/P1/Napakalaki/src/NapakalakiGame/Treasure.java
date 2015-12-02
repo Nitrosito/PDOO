@@ -32,5 +32,8 @@ public class Treasure {
         return type;
     }
     
+    public String toString(){
+        return name+" bonus: "+bonus+" " + type.toString();
+    }
     
 }

@@ -194,9 +194,10 @@ public ArrayList<Treasure> getVisibleTreasures(){
    
    public void discardHiddenTreasure(Treasure t){
        hiddenTreasures.remove(t);
-       if(pendingBadConsequence==null && (!pendingBadConsequence.isEmpty())){
+       
+       if(pendingBadConsequence!=null && !pendingBadConsequence.isEmpty())
            pendingBadConsequence.substractHiddenTreasure(t);
-       }
+       
        dielNoTreasures();
    }
    
@@ -273,8 +274,9 @@ public ArrayList<Treasure> getVisibleTreasures(){
        for(Treasure treasure: visibleTreasures){
            discardVisibleTreasure(treasure);
        }
-       for(Treasure treasure: hiddenTreasures){
-           discardHiddenTreasure(treasure);
+       
+       for(int i=0; i<hiddenTreasures.size();i++){
+           discardHiddenTreasure(hiddenTreasures.get(i));
        }
    }
 
