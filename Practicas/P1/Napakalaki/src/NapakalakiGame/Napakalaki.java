@@ -91,7 +91,6 @@ public class Napakalaki {
         this.setEnemies();
         dealer.initCards();   
         this.nextTurn();
-        nextTurn();
     }
     
     private void setEnemies(){
