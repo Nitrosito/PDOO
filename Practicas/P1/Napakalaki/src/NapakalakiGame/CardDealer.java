@@ -291,10 +291,10 @@ public class CardDealer {
     }
     
     public void giveTreasureBack(Treasure t){
-       // usedTreasures.add(t);
-        if(t.getBonus()>3){
-            favourite.makeTreasureVisible(t);
-        }
+       usedTreasures.add(t);
+       // if(t.getBonus()>3){
+       //     favourite.makeTreasureVisible(t);
+       // }
     }
     
     public void giveMonsterBack(Monster m){

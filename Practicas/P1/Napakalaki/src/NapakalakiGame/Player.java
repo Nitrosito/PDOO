@@ -276,8 +276,8 @@ public ArrayList<Treasure> getVisibleTreasures(){
    }
    
    public void discardAllTreasures(){
-       for(Treasure treasure: visibleTreasures){
-           discardVisibleTreasure(treasure);
+       for(int i=0; i < visibleTreasures.size();i++){
+           discardVisibleTreasure(visibleTreasures.get(i));
        }
        
        for(int i=0; i<hiddenTreasures.size();i++){
