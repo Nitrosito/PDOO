@@ -178,7 +178,6 @@ public ArrayList<Treasure> getVisibleTreasures(){
        boolean canI=canMakeTreasureVisible(t);
        if(canI){
            visibleTreasures.add(t);
-       }else{
            hiddenTreasures.remove(t);
        }
    }
