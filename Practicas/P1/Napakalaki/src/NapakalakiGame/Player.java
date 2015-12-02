@@ -137,8 +137,14 @@ public class Player {
        }
    }
    
-//   private int howManyVisibleTreasures(TreasureKind tKind){
-//   }
+   private int howManyVisibleTreasures(TreasureKind tKind){
+       int ntesoros=0;
+       for(Treasure tesoros:visibleTreasures){
+           if(tesoros.getType()==tKind)
+               ntesoros+=1;
+       }
+       return ntesoros;
+   }
    
    private void dielNoTreasures(){
        if(visibleTreasures.size()==0 && hiddenTreasures.size()==0){
