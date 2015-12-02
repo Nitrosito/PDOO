@@ -303,7 +303,9 @@ public class CardDealer {
     
     public void initCards(){
         initTreasureCardDeck();
+        shuffleTreasures();
         initMonsterCardDeck();
+        shuffleMonsters();
     }
     
     public void setPlayer(Player p){
