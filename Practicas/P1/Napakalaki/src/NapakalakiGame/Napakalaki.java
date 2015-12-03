@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package napakalaki;
+package NapakalakiGame;
 
 import java.util.ArrayList;
 import java.util.Random;
-import static napakalaki.CombatResult.WINGAME;
+import static NapakalakiGame.CombatResult.WINGAME;
 
 /**
  *
@@ -66,30 +66,20 @@ public class Napakalaki {
     }
 
     
-    private boolean nextTurnAllowed(){
+    private boolean nextTurnAllowed(){ // #FIXME #PARCHACO #CHAPUZA #PREGUNTAR #TODO
+                if(currentPlayer == null)
+            return true;
+            
             return currentPlayer.validState();
-
     }
 
    
-//    public CombatResult developCombat(){
-//        //
-//    }
-//    
-//    public void discardVisibleTreasures(ArrayList<Treasure> treasures){
-//        //
-//    }
-//    
-//    public void discardHiddenTreasures(ArrayList<Treasures> treasures){
-//        //
-//    }
-    
+   
     public void initGame(ArrayList<String> players){
         this.initPlayers(players);
         this.setEnemies();
-        this.nextTurn();
         dealer.initCards();   
-        nextTurn();
+        this.nextTurn();
     }
     
     private void setEnemies(){
@@ -97,7 +87,7 @@ public class Napakalaki {
          for(int i = 0; i < players.size(); i++){
          while(ind == i)
             ind = (int)(Math.random()*players.size());
-         players.set(i, players.get(ind));
+         players.get(i).setEnemy(players.get(ind));
         }
     }
    
@@ -129,10 +119,6 @@ public class Napakalaki {
        }         
     }
     
-//    public void initGame(ArrayLIst<String> players){
-//        //
-//    }
-//    
     public Player getCurrentPlayer(){
         return currentPlayer;
     }
@@ -155,29 +141,13 @@ public class Napakalaki {
         }
         return stateOK;
     }
-    
-    
-    public boolean nextTurn(){
-        boolean stateOK=nextTurnAllowed();
-        if(stateOK){
-            currentMonster=dealer.nextMonster();
-            currentPlayer=nextPlayer();
-            boolean dead=currentPlayer.isDead();
-            if(dead){
-                currentPlayer.initTreasures();
-            }
-        }
-        return stateOK;
-    }
+
     
     public boolean endOfGame(CombatResult result){
         return result==WINGAME;
     }
     
     
-    
-    
-        
-//Public
+   
     
 }

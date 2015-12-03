@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package napakalaki;
+package NapakalakiGame;
 import java.util.ArrayList;
 
 /**
@@ -120,9 +120,49 @@ public class BadConsequence {
         this.death=false;
     }
         
-    BadConsequence adjustToFitTreasureList(ArrayList<Treasure> visible, ArrayList<Treasure> hidden){
-        BadConsequence bad=new BadConsequence("prueba",true);
-        return bad;
+public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v, ArrayList<Treasure> h){   
+    int visibles=0;
+    int ocultos=0;
+    ArrayList<TreasureKind> espVisibles = new ArrayList();
+    ArrayList<TreasureKind> espOcultos = new ArrayList();
+
+        if(nVisibleTreasures > 0){ //o te quita visibles
+            if(nVisibleTreasures > v.size()){
+                visibles = v.size();
+            }
+            else{
+                visibles = nVisibleTreasures;
+            }
+        }
+        else{ // o especificos
+            for (TreasureKind specificVisibleTreasure : specificVisibleTreasures) {
+                for(Treasure treasure : v){
+                    if(treasure.getType() == specificVisibleTreasure)
+                        espVisibles.add(specificVisibleTreasure);
+                }                 
+            }
+        }
+        if(nHiddenTreasures > 0){
+            if(nHiddenTreasures > h.size()){
+                ocultos = h.size();
+            }
+            else{
+                ocultos = nHiddenTreasures;
+            }
+        }
+        else{
+           for (TreasureKind specificHiddenTreasure : specificHiddenTreasures) {
+                for(Treasure treasure : h){
+                    if(treasure.getType() == specificHiddenTreasure)
+                        espOcultos.add(specificHiddenTreasure);
+                }                 
+            }
+        }
+       BadConsequence res = new BadConsequence("", 0, espVisibles, espOcultos);
+       res.nHiddenTreasures=ocultos;
+       res.nVisibleTreasures=visibles;
+       return res;
+        
     }
     
     

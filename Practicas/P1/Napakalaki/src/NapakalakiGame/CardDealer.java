@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package napakalaki;
+package NapakalakiGame;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -267,34 +267,37 @@ public class CardDealer {
      
     public Treasure nextTreasure(){
         if(unusedTreasures.isEmpty()){
-            unusedTreasures=usedTreasures;
+            unusedTreasures.addAll(usedTreasures);
             shuffleTreasures();
             usedTreasures.clear();
         }
         
-        Treasure salida = unusedTreasures.get(unusedTreasures.size()-1);
-        unusedTreasures.remove(unusedTreasures.size()-1);
+        Treasure salida;
+        salida = unusedTreasures.get(0);
+        usedTreasures.add(unusedTreasures.get(0));
+        unusedTreasures.remove(0);
         return salida;
     }
     
     public Monster nextMonster(){
         if(unusedMonster.isEmpty()){
-            unusedMonster=usedMonster;
+            unusedMonster.addAll(usedMonster);
             shuffleMonsters();
             usedMonster.clear();
         }
         
         Monster salida;
-        salida = unusedMonster.get(unusedMonster.size()-1);
-        unusedMonster.remove(unusedMonster.size()-1);
+        salida = unusedMonster.get(0);
+        usedMonster.add(unusedMonster.get(0));
+        unusedMonster.remove(0);
         return salida;
     }
     
     public void giveTreasureBack(Treasure t){
-       // usedTreasures.add(t);
-        if(t.getBonus()>3){
-            favourite.makeTreasureVisible(t);
-        }
+       usedTreasures.add(t);
+       // if(t.getBonus()>3){
+       //     favourite.makeTreasureVisible(t);
+       // }
     }
     
     public void giveMonsterBack(Monster m){
@@ -303,7 +306,9 @@ public class CardDealer {
     
     public void initCards(){
         initTreasureCardDeck();
+        shuffleTreasures();
         initMonsterCardDeck();
+        shuffleMonsters();
     }
     
     public void setPlayer(Player p){
