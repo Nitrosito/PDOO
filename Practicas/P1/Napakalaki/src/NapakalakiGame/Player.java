@@ -22,18 +22,24 @@ import static NapakalakiGame.TreasureKind.SHOES;
 
 public class Player {
    private String name;
-   private int level=1;
-   private boolean dead=true;
-   private boolean canISteal=true;
+   private int level;
+   private boolean dead;
+   private boolean canISteal;
    private Player enemy;
-   private ArrayList<Treasure> hiddenTreasures=new ArrayList();
-   private ArrayList<Treasure> visibleTreasures=new ArrayList();
+   private ArrayList<Treasure> hiddenTreasures;
+   private ArrayList<Treasure> visibleTreasures;
    private BadConsequence pendingBadConsequence;
    
    static final int MAXLEVEL=10;
    
    public Player(String name){
+       level=1;
+       dead=true;
+       canISteal=true;
        this.name=name;
+       pendingBadConsequence=new BadConsequence("", 0,0,0);
+       hiddenTreasures= new ArrayList<>();
+       visibleTreasures = new ArrayList<>();
    }
    
    public String getName(){
