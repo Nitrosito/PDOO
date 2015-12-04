@@ -272,9 +272,7 @@ public class CardDealer {
             usedTreasures.clear();
         }
         
-        Treasure salida;
-        salida = unusedTreasures.get(0);
-        usedTreasures.add(unusedTreasures.get(0));
+        Treasure salida = unusedTreasures.get(0);
         unusedTreasures.remove(0);
         return salida;
     }
