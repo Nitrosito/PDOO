@@ -154,7 +154,7 @@ public class Player {
    
    private void dielNoTreasures(){
        if(visibleTreasures.size()==0 && hiddenTreasures.size()==0){
-           dead=false;
+           dead=true;
        }
    }
    
