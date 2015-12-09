@@ -56,7 +56,7 @@ public class BadConsequence {
     void substractVisibleTreasure(Treasure t){
          boolean esta = false;
         int ind;
-        for(ind = 0; ind < specificVisibleTreasures.size(); ind++){
+        for(ind = 0; ind < specificVisibleTreasures.size() && esta!=true; ind++){
             if(t.getType() == specificVisibleTreasures.get(ind))
                 esta = true;
         }
@@ -69,7 +69,7 @@ public class BadConsequence {
     void substractHiddenTreasure(Treasure t){
                  boolean esta = false;
         int ind;
-        for(ind = 0; ind < specificHiddenTreasures.size(); ind++){
+        for(ind = 0; ind < specificHiddenTreasures.size() && esta!=true ; ind++){
             if(t.getType() == specificHiddenTreasures.get(ind))
                 esta = true;
         }

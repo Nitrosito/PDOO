@@ -282,12 +282,14 @@ public ArrayList<Treasure> getVisibleTreasures(){
    }
    
    public void discardAllTreasures(){
-       for(int i=0; i < visibleTreasures.size();i++){
-           discardVisibleTreasure(visibleTreasures.get(i));
+       ArrayList<Treasure> vcopia = new ArrayList(visibleTreasures);
+       for(int i=0; i < vcopia.size();i++){
+           discardVisibleTreasure(vcopia.get(i));
        }
        
-       for(int i=0; i<hiddenTreasures.size();i++){
-           discardHiddenTreasure(hiddenTreasures.get(i));
+       ArrayList<Treasure> hcopia = new ArrayList(hiddenTreasures);
+       for(int i=0; i< hcopia.size();i++){
+           discardHiddenTreasure(hcopia.get(i));
        }
    }
 
