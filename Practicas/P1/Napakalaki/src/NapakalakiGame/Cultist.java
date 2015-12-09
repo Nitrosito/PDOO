@@ -16,10 +16,13 @@
  */
 package NapakalakiGame;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author nico
+ * @author nitrosito
  */
-public enum CombatResult {
-    WINGAME, WIN, LOSE, LOSEANDCONVERT
+public class Cultist {
+    private String name;
+    private int gainedLevels;
 }

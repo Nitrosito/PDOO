@@ -16,28 +16,46 @@
  */
 package NapakalakiGame;
 
-import java.util.Random;
-
 /**
  *
  * @author nitrosito
  */
-public class Dice {
+public class CultistPlayer extends Player {
+    //final?
+    private static int totalCultistPlayers = 0;
+    private Cultist myCultistCard;
+    protected Player enemy;
     
-     private static final Dice instance = new Dice();
-     
-      private Dice(){
-     // Aqui va la asignación de valores, etc
+    public CultistPlayer(Player p, Cultist c){
+        super(p);
+        myCultistCard=c;
+        totalCultistPlayers++;
     }
-
-    public static Dice getInstance(){
-        return instance;
+    
+    protected int getCombatLevel(Monster m){
+        return m.getCombatLevel();
+    }
+    
+    protected int getOponentLevel(Monster m){
+        // y este que hace?
+        return 0;
+    }
+    
+    protected boolean shouldConvert(){
+        return true;
+    }
+    
+    private Treasure giveMeATreasure(){
+        return null;
+    }
+    
+    private void canYouGiveMeATreasure(){
+        
+    }
+    
+    static public int getTotalCultistPlayers(){
+        return 1;
     }
     
     
-    public int nextNumber(){
-        Random rand = new Random();
-        return (rand.nextInt((6 - 1) + 1) + 1);     
-    }
-
 }

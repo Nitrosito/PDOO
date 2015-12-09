@@ -14,6 +14,7 @@ import static NapakalakiGame.TreasureKind.ARMOR;
 import static NapakalakiGame.TreasureKind.BOTHHANDS;
 import static NapakalakiGame.TreasureKind.ONEHAND;
 import static NapakalakiGame.TreasureKind.SHOES;
+import sun.security.util.PendingException;
 
 /**
  *
@@ -42,6 +43,18 @@ public class Player {
        visibleTreasures = new ArrayList<>();
    }
    
+      /** @TODO revisar */
+   public Player(Player p){
+   name=p.name;
+   level=p.level;
+   dead=p.dead;
+   canISteal=p.canISteal;
+   enemy=p.enemy;
+   hiddenTreasures= p.hiddenTreasures;
+   visibleTreasures= p.visibleTreasures;
+   pendingBadConsequence= p.pendingBadConsequence;
+   }
+  
    public String getName(){
        return name;
    }
@@ -54,7 +67,7 @@ public class Player {
        dead=false;
    }
    
-   private int getCombatLevel(){
+   protected int getCombatLevel(){
        int combatLevel;
        int bonus=0;
        
@@ -292,5 +305,16 @@ public ArrayList<Treasure> getVisibleTreasures(){
            discardHiddenTreasure(hcopia.get(i));
        }
    }
+   
+
+   
+   protected int getOponentLevel(Monster m){
+       return 1;
+   }
+   
+   protected boolean shouldConvert(){
+       return true;
+   }
+   
 
 }
