@@ -330,6 +330,31 @@ public class CardDealer {
     }
     
     private void initCultistsCardDeck(){
+       Cultist carta;
+       
+        carta = new Cultist("Sectario +1 por cada sectario en juego. No puedes dejar de"
+                + " ser sectario", 1);
+        unusedCultists.add(carta);
+        
+        carta = new Cultist("Sectario +2 por cada sectario en juego. No puedes dejar de"
+                + " ser sectario", 2);
+        unusedCultists.add(carta);
+        
+        carta = new Cultist("Sectario +1 por cada sectario en juego. No puedes dejar de"
+                + " ser sectario", 1);
+        unusedCultists.add(carta);
+        
+        carta = new Cultist("Sectario +2 por cada sectario en juego. No puedes dejar de"
+                + " ser sectario", 2);
+        unusedCultists.add(carta);
+        
+        carta = new Cultist("Sectario +1 por cada sectario en juego. No puedes dejar de"
+                + " ser sectario", 1);
+        unusedCultists.add(carta);
+   
+        carta = new Cultist("Sectario +1 por cada sectario en juego. No puedes dejar de"
+                + " ser sectario", 1);
+        unusedCultists.add(carta);
         
     }
     
