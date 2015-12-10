@@ -35,17 +35,20 @@ public class CultistPlayer extends Player {
         totalCultistPlayers++;
     }
     
-    protected int getCombatLevel(Monster m){
+    @Override
+    protected int getCombatLevel(){
         int nvplayer = super.getCombatLevel();
         int res;
-        res = (int) (nvplayer + (nvplayer*0.2)) + (m.getLevelsGained() * totalCultistPlayers);
+        res = (int) (nvplayer + (nvplayer*0.2)) + (myCultistCard.getGainedLevels()* totalCultistPlayers);
         return res;
     }
     
+    @Override
     protected int getOponentLevel(Monster m){
         return m.getCombatLevelAgainstCultistsPlayer();
     }
     
+    @Override
     protected boolean shouldConvert(){
         return false;
     }
