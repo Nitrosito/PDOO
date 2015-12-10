@@ -49,7 +49,7 @@ public class Monster {
     }
     
     public int getCombatLevelAgainstCultistsPlayer(){
-        return levelChangeAgainstCultistPlayer;
+        return combatLevel+levelChangeAgainstCultistPlayer;
     }
     
     public String toString(){

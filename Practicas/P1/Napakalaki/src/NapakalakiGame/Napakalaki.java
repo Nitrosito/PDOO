@@ -7,7 +7,7 @@ package NapakalakiGame;
 
 import java.util.ArrayList;
 import java.util.Random;
-import static NapakalakiGame.CombatResult.WINGAME;
+import static NapakalakiGame.CombatResult.*;
 
 /**
  *
@@ -93,10 +93,17 @@ public class Napakalaki {
    
     
     public CombatResult developCombat(){
-        CombatResult aux;
-        aux=currentPlayer.combat(currentMonster);
+        CombatResult resultadocombate;
+        resultadocombate=currentPlayer.combat(currentMonster);
+        if(resultadocombate==CombatResult.LOSEANDCONVERT){
+            Cultist carta= dealer.nextCultist();
+            CultistPlayer jugador = new CultistPlayer(currentPlayer, carta);
+            int posicionjugador = players.indexOf(currentPlayer);
+            currentPlayer = jugador;
+            players.set(posicionjugador, jugador);
+        }
         dealer.giveMonsterBack(currentMonster);
-        return aux;
+        return resultadocombate;
     }
     
     public void discardVisibleTreasures(ArrayList<Treasure> treasures){

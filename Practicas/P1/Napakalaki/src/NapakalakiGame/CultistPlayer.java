@@ -16,6 +16,9 @@
  */
 package NapakalakiGame;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  *
  * @author nitrosito
@@ -33,28 +36,37 @@ public class CultistPlayer extends Player {
     }
     
     protected int getCombatLevel(Monster m){
-        return m.getCombatLevel();
+        int nvplayer = super.getCombatLevel();
+        int res;
+        res = (int) (nvplayer + (nvplayer*0.2)) + (m.getLevelsGained() * totalCultistPlayers);
+        return res;
     }
     
     protected int getOponentLevel(Monster m){
-        // y este que hace?
-        return 0;
+        return m.getCombatLevelAgainstCultistsPlayer();
     }
     
     protected boolean shouldConvert(){
-        return true;
+        return false;
     }
     
     private Treasure giveMeATreasure(){
-        return null;
+        ArrayList<Treasure> tesoros = getVisibleTreasures();
+        Random rand = new Random();
+        int aleatorio = (rand.nextInt(((tesoros.size()-1) - 1) + 1) + 1);     
+        return tesoros.get(aleatorio);
     }
     
-    private void canYouGiveMeATreasure(){
-        
+    /* @FIXME  boolean o void */
+    private boolean canYouGiveMeATreasure(){
+        ArrayList<Treasure> tesoros = enemy.getVisibleTreasures();
+        if(tesoros.size()>0)
+            return true;
+        return false;
     }
     
     static public int getTotalCultistPlayers(){
-        return 1;
+        return totalCultistPlayers;
     }
     
     

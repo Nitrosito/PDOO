@@ -7,13 +7,8 @@ package NapakalakiGame;
 
 import java.util.ArrayList;
 import java.util.Random;
-import static NapakalakiGame.CombatResult.LOSE;
-import static NapakalakiGame.CombatResult.WIN;
-import static NapakalakiGame.CombatResult.WINGAME;
-import static NapakalakiGame.TreasureKind.ARMOR;
-import static NapakalakiGame.TreasureKind.BOTHHANDS;
-import static NapakalakiGame.TreasureKind.ONEHAND;
-import static NapakalakiGame.TreasureKind.SHOES;
+import static NapakalakiGame.CombatResult.*;
+import static NapakalakiGame.TreasureKind.*;
 import sun.security.util.PendingException;
 
 /**
@@ -57,6 +52,10 @@ public class Player {
   
    public String getName(){
        return name;
+   }
+   
+   protected Player getEnemy(){
+       return enemy;
    }
    
    public String toString(){
@@ -185,7 +184,7 @@ public ArrayList<Treasure> getVisibleTreasures(){
    
    public CombatResult combat(Monster m){
        int myLevel=getCombatLevel();
-       int monsterLevel=m.getCombatLevel();
+       int monsterLevel=this.getOponentLevel(m);
        if(myLevel>monsterLevel){
            applyPrize(m);
            if(level>=MAXLEVEL){
@@ -195,6 +194,9 @@ public ArrayList<Treasure> getVisibleTreasures(){
            }
        }else{
            applyBadConsequence(m);
+           if(this.shouldConvert())
+               return LOSEANDCONVERT;
+           
            return LOSE;
        }
    }
@@ -309,11 +311,16 @@ public ArrayList<Treasure> getVisibleTreasures(){
 
    
    protected int getOponentLevel(Monster m){
-       return 1;
+       return m.getCombatLevel();
    }
    
    protected boolean shouldConvert(){
-       return true;
+       Dice dice = Dice.getInstance();
+
+       if(dice.nextNumber()==1)
+           return true;
+       
+       return false;
    }
    
 

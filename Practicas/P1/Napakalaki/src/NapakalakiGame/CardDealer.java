@@ -353,6 +353,8 @@ public class CardDealer {
         shuffleTreasures();
         initMonsterCardDeck();
         shuffleMonsters();
+        initCultistsCardDeck();
+        shuffleCultists();
     }
     
     public void setPlayer(Player p){
@@ -360,7 +362,7 @@ public class CardDealer {
     }
     
     private void shuffleCultists(){
-        
+        Collections.shuffle(unusedCultists);
     }
     
     private void initCultistsCardDeck(){
@@ -392,6 +394,7 @@ public class CardDealer {
         
     }
     
+    /** @FIXME */
     public Cultist nextCultist(){
         return null;
     }
