@@ -99,6 +99,10 @@ public class Napakalaki {
             Cultist carta= dealer.nextCultist();
             CultistPlayer jugador = new CultistPlayer(currentPlayer, carta);
             int posicionjugador = players.indexOf(currentPlayer);
+            for (Player player : players) {
+                if(player.getEnemy()==currentPlayer)
+                    player.setEnemy(jugador);
+            }
             currentPlayer = jugador;
             players.set(posicionjugador, jugador);
         }
