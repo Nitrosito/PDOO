@@ -33,7 +33,7 @@ public class Player {
        dead=true;
        canISteal=true;
        this.name=name;
-       pendingBadConsequence=new BadConsequence("", 0,0,0);
+       pendingBadConsequence=new NumericBC("", 0,0,0);
        hiddenTreasures= new ArrayList<>();
        visibleTreasures = new ArrayList<>();
    }
@@ -174,13 +174,13 @@ public class Player {
        return dead;
    }
    
-public ArrayList<Treasure> getHiddenTreasures(){
-    return hiddenTreasures;
-}
-   
-public ArrayList<Treasure> getVisibleTreasures(){
-    return visibleTreasures;
-}
+    public ArrayList<Treasure> getHiddenTreasures(){
+        return hiddenTreasures;
+    }
+
+    public ArrayList<Treasure> getVisibleTreasures(){
+        return visibleTreasures;
+    }
    
    public CombatResult combat(Monster m){
        int myLevel=getCombatLevel();
