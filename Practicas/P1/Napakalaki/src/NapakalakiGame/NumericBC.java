@@ -17,6 +17,7 @@
 package NapakalakiGame;
 
 import java.util.ArrayList;
+import GUI.Dice; 
 
 /**
  *

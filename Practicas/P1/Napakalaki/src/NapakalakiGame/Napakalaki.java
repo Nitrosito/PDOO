@@ -8,6 +8,7 @@ package NapakalakiGame;
 import java.util.ArrayList;
 import java.util.Random;
 import static NapakalakiGame.CombatResult.*;
+import GUI.Dice; 
 
 /**
  *

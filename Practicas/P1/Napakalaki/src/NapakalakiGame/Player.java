@@ -10,6 +10,7 @@ import java.util.Random;
 import static NapakalakiGame.CombatResult.*;
 import static NapakalakiGame.TreasureKind.*;
 import sun.security.util.PendingException;
+import GUI.Dice; 
 
 /**
  *
