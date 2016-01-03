@@ -28,7 +28,7 @@ public class NapakalakiView extends javax.swing.JFrame {
      * Creates new form NapakalakiView
      */
     
-    Napakalaki napakalakiModel;
+    private Napakalaki napakalakiModel;
     public NapakalakiView() {
         initComponents();
     }
