@@ -30,7 +30,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
      * Creates new form PlayerNamesCapture
      */
     
-    private ArrayList<String> names;
+    private ArrayList<String> names = new ArrayList();
     
     public PlayerNamesCapture(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
