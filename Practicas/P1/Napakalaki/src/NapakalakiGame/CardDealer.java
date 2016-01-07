@@ -156,36 +156,36 @@ public class CardDealer {
             unusedMonster.add(new Monster("El rey de rosa",13,badConsequence,prize));
             
                 // Angeles de la noche ibicenca
-            specificBC badConsequenceSpecific;
-            badConsequenceSpecific = new specificBC("Te atrapan para llevarte de fiesta y te dejan"
+            SpecificBC badConsequenceSpecific;
+            badConsequenceSpecific = new SpecificBC("Te atrapan para llevarte de fiesta y te dejan"
                     + "caer en mitad del vuelo. Descarta 1 mano visible y 1 mano oculta",0,
                     new ArrayList(Arrays.asList(TreasureKind.ONEHAND)),
                     new ArrayList(Arrays.asList(TreasureKind.ONEHAND)));
             
                     prize = new Prize(4,1);
-                    unusedMonster.add(new Monster("Angeles de la noche ibicenca",14,badConsequence,prize));
+                    unusedMonster.add(new Monster("Angeles de la noche ibicenca",14,badConsequenceSpecific,prize));
                     
                     
                 // Byakhees de bonanza
-            badConsequenceSpecific = new specificBC("Pierdes tu armadura visible y otra oculta", 0,
+            badConsequenceSpecific = new SpecificBC("Pierdes tu armadura visible y otra oculta", 0,
                     new ArrayList(Arrays.asList(TreasureKind.ARMOR)),
                     new ArrayList(Arrays.asList(TreasureKind.ARMOR)));
             prize=new Prize(2, 1);
-            unusedMonster.add(new Monster("Byakhess de bonanza", 8, badConsequence, prize));
+            unusedMonster.add(new Monster("Byakhess de bonanza", 8, badConsequenceSpecific, prize));
             
             
                 // Chibithulhu
-            badConsequenceSpecific = new specificBC("Embobados con el lindo primigenio te descartas de tu casco visible"
+            badConsequenceSpecific = new SpecificBC("Embobados con el lindo primigenio te descartas de tu casco visible"
                 ,0,new ArrayList(Arrays.asList(TreasureKind.HELMET)),new ArrayList());
             prize = new Prize(1, 1);
-            unusedMonster.add(new Monster("Chibithulhu",2,badConsequence,prize));
+            unusedMonster.add(new Monster("Chibithulhu",2,badConsequenceSpecific,prize));
             
             
                 //El sopor de Dunwich
-            badConsequenceSpecific = new specificBC("El primordial bostezo contagioso.Pierdes el calzado visible"
+            badConsequenceSpecific = new SpecificBC("El primordial bostezo contagioso.Pierdes el calzado visible"
                     , 0, new ArrayList(Arrays.asList(TreasureKind.SHOES)),new ArrayList());
             prize = new Prize(1,1);
-            unusedMonster.add(new Monster("El sopor de Dunwich",2,badConsequence,prize));
+            unusedMonster.add(new Monster("El sopor de Dunwich",2,badConsequenceSpecific,prize));
             
             
                 //El gorron en el umbral
@@ -195,17 +195,17 @@ public class CardDealer {
             
             
                 //H.P. Munchraft
-            badConsequenceSpecific = new specificBC("Pierdes la armadura visible",0,
+            badConsequenceSpecific = new SpecificBC("Pierdes la armadura visible",0,
                     new ArrayList(Arrays.asList(TreasureKind.ARMOR)),new ArrayList());
             prize = new Prize(2,1);
-            unusedMonster.add(new Monster("H.P. Munchraft",6,badConsequence,prize));
+            unusedMonster.add(new Monster("H.P. Munchraft",6,badConsequenceSpecific,prize));
             
             
                 //Bichgooth
-            badConsequenceSpecific = new specificBC("Sientes bichos bajo la ropa.Descarta la armadura visible",
+            badConsequenceSpecific = new SpecificBC("Sientes bichos bajo la ropa.Descarta la armadura visible",
             0, new ArrayList(Arrays.asList(TreasureKind.ARMOR)),new ArrayList());
             prize = new Prize(1,1);
-            unusedMonster.add(new Monster("Bichgooth",2,badConsequence,prize));
+            unusedMonster.add(new Monster("Bichgooth",2,badConsequenceSpecific,prize));
             
             
                 //La que redacta en las tinieblas
@@ -214,11 +214,11 @@ public class CardDealer {
             unusedMonster.add(new Monster("La que redacta en las tinieblas",2,badConsequence,prize));
             
                 //Los hondos
-            deathBC muerte;
-            muerte = new deathBC("Estos monstruos resultan bastante superficiales  "
+            DeathBC muerte;
+            muerte = new DeathBC("Estos monstruos resultan bastante superficiales  "
                 + "y te aburren mortalmente",true);
             prize = new Prize(2,1);
-            unusedMonster.add(new Monster("Los hondos", 8,badConsequence,prize));
+            unusedMonster.add(new Monster("Los hondos", 8,muerte,prize));
             
                 //Semillas Cthulhu
             badConsequence = new NumericBC("Pierdes 2 niveles y 2 tesoros ocultos",2,0,2);
@@ -226,10 +226,10 @@ public class CardDealer {
             unusedMonster.add(new Monster("Semillas Cthulhu",4,badConsequence,prize));
             
                 //Dameargo
-            badConsequenceSpecific = new specificBC("Te intentas escaquear.Pierdes una mano visible"
+            badConsequenceSpecific = new SpecificBC("Te intentas escaquear.Pierdes una mano visible"
                     ,0, new ArrayList(Arrays.asList(TreasureKind.ONEHAND)),new ArrayList());
             prize = new Prize(2,1);
-            unusedMonster.add(new Monster("Dameargo",1,badConsequence,prize));
+            unusedMonster.add(new Monster("Dameargo",1,badConsequenceSpecific,prize));
             
                 //Pollipólipo volante
             badConsequence = new NumericBC("Da mucho asquito. Pierdes 3 niveles",3,0,0);
@@ -237,26 +237,26 @@ public class CardDealer {
             unusedMonster.add(new Monster("Pollipólipo volante",3,badConsequence,prize));
             
                 //Yskhtihyssg- Goth
-            muerte = new deathBC("No le hace gracia que pronuncien mal su nombre. Estas muerto",true);
+            muerte = new DeathBC("No le hace gracia que pronuncien mal su nombre. Estas muerto",true);
             prize = new Prize(3,1);
-            unusedMonster.add(new Monster("Yskhtihyssg- Goth",12,badConsequence,prize));
+            unusedMonster.add(new Monster("Yskhtihyssg- Goth",12,muerte,prize));
             
                 //Familia feliz
-            muerte = new deathBC("La familia te atrapa. Est́as muerto",true);
+            muerte = new DeathBC("La familia te atrapa. Est́as muerto",true);
             prize = new Prize(4,1);
-            unusedMonster.add(new Monster("Familia feliz",1,badConsequence,prize));
+            unusedMonster.add(new Monster("Familia feliz",1,muerte,prize));
             
                 //Roboggoth
-            badConsequenceSpecific = new specificBC("La quinta directiva primaria te obliga a perder 2 niveles y un tesoro 2 manos visible"
+            badConsequenceSpecific = new SpecificBC("La quinta directiva primaria te obliga a perder 2 niveles y un tesoro 2 manos visible"
             ,0,new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS)),new ArrayList());
             prize = new Prize(2,1);
-            unusedMonster.add(new Monster("Roboggoth",8,badConsequence,prize));
+            unusedMonster.add(new Monster("Roboggoth",8,badConsequenceSpecific,prize));
             
                 //El espia
-            badConsequenceSpecific = new specificBC("Te asusta en la noche. Pierdes un casco visible",0
+            badConsequenceSpecific = new SpecificBC("Te asusta en la noche. Pierdes un casco visible",0
                     ,new ArrayList(Arrays.asList(TreasureKind.HELMET)),new ArrayList());
             prize = new Prize(1,1);
-            unusedMonster.add(new Monster("El espia",5,badConsequence,prize));
+            unusedMonster.add(new Monster("El espia",5,badConsequenceSpecific,prize));
             
                 //El Lenguas
             badConsequence = new NumericBC("Menudo susto te llevas. Pierdes 2 niveles y 5 tesoros visibles"
@@ -273,28 +273,28 @@ public class CardDealer {
             //////////////////////
             // CARTAS SECTARIOS //
             //////////////////////
-            badConsequenceSpecific = new specificBC("Pierdes 1 mano visible",0,
+            badConsequenceSpecific = new SpecificBC("Pierdes 1 mano visible",0,
                     new ArrayList(Arrays.asList(TreasureKind.ONEHAND)),new ArrayList());
             prize = new Prize(3,1);
-            unusedMonster.add(new Monster("El mal indecible impronunciable", 10, badConsequence, prize, -2));
+            unusedMonster.add(new Monster("El mal indecible impronunciable", 10, badConsequenceSpecific, prize, -2));
             
             badConsequence = new NumericBC("Pierdes tus tesoros visibles. Ja ja ja.",0,BadConsequence.MAXTREASURES,0);
             prize = new Prize(2,1);
             unusedMonster.add(new Monster("Testigos Oculares", 6, badConsequence, prize, +2));       
  
-            muerte = new deathBC("Hoy no es tu día de suerte. Mueres.", true);
+            muerte = new DeathBC("Hoy no es tu día de suerte. Mueres.", true);
             prize = new Prize(2,5);
-            unusedMonster.add(new Monster("El gran cthulhu", 20, badConsequence, prize, +4));
+            unusedMonster.add(new Monster("El gran cthulhu", 20, muerte, prize, +4));
             
             badConsequence = new NumericBC("Tu gobierno te recorta 2 niveles", 2, 0, 0);
             prize = new Prize(2,1);
             unusedMonster.add(new Monster("Serpiente Político", 8, badConsequence, prize, -2));              
 
-            badConsequenceSpecific = new specificBC("Pierdes tu casco y tu armadura visible. Pierdes tus manos ocultas.",
+            badConsequenceSpecific = new SpecificBC("Pierdes tu casco y tu armadura visible. Pierdes tus manos ocultas.",
                     0,new ArrayList(Arrays.asList(TreasureKind.HELMET,TreasureKind.ARMOR)),
                     new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS,TreasureKind.ONEHAND,TreasureKind.ONEHAND)));
             prize = new Prize(1,1);
-            unusedMonster.add(new Monster("Felpuggoth", 2, badConsequence, prize, +5));
+            unusedMonster.add(new Monster("Felpuggoth", 2, badConsequenceSpecific, prize, +5));
             
             badConsequence = new NumericBC("Pierdes 2 niveles", 2, 0, 0);
             prize = new Prize(4,2);

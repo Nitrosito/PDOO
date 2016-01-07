@@ -16,10 +16,87 @@
  */
 package NapakalakiGame;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author nitrosito
  */
-public class SpecificBC {
+public class SpecificBC extends BadConsequence{
+    private ArrayList<TreasureKind> specificHiddenTreasures= new ArrayList();
+    private ArrayList<TreasureKind> specificVisibleTreasures= new ArrayList();
+
+    public SpecificBC(String text, int levels, ArrayList<TreasureKind> tVisible, ArrayList<TreasureKind> tHidden) {
+        super(text, levels);
+        this.specificVisibleTreasures=tVisible;
+        this.specificHiddenTreasures=tHidden;
+    }
     
+    public ArrayList<TreasureKind> getSpecificVisibleTreasures(){
+        return specificVisibleTreasures;
+    }
+    
+    public ArrayList<TreasureKind> getSpecificHiddenTreasures(){
+        return specificHiddenTreasures;
+    }
+    
+    @Override
+    public boolean isEmpty() {
+        if(specificHiddenTreasures.size()== 0 && specificVisibleTreasures.size() == 0)
+            return true;
+        return false;
+    }
+
+    @Override
+    void substractVisibleTreasure(Treasure t) {
+        boolean esta = false;
+        int ind;
+        for(ind = 0; ind < specificVisibleTreasures.size() && esta!=true; ind++){
+            if(t.getType() == specificVisibleTreasures.get(ind))
+                esta = true;
+        }
+        if(esta)
+           specificVisibleTreasures.remove(ind);
+    }
+
+    @Override
+    void substractHiddenTreasure(Treasure t) {
+        boolean esta = false;
+        int ind;
+        for(ind = 0; ind < specificHiddenTreasures.size() && esta!=true ; ind++){
+            if(t.getType() == specificHiddenTreasures.get(ind))
+                esta = true;
+        }
+        if(esta)
+           specificHiddenTreasures.remove(ind);
+    }
+
+    @Override
+    public SpecificBC adjustToFitTreasureLists(ArrayList<Treasure> v, ArrayList<Treasure> h) {
+        ArrayList<TreasureKind> espVisibles = new ArrayList();
+        ArrayList<TreasureKind> espOcultos = new ArrayList();
+
+        for (TreasureKind specificVisibleTreasure : specificVisibleTreasures) {
+                for(Treasure treasure : v){
+                    if(treasure.getType() == specificVisibleTreasure)
+                        espVisibles.add(specificVisibleTreasure);
+                }                 
+            }
+        
+        for (TreasureKind specificHiddenTreasure : specificHiddenTreasures) {
+                for(Treasure treasure : h){
+                    if(treasure.getType() == specificHiddenTreasure)
+                        espOcultos.add(specificHiddenTreasure);
+                }                 
+            }
+        
+       SpecificBC res = new SpecificBC("", 0, espVisibles, espOcultos);
+       return res;
+        
+    }
+    
+     public String toString(){
+        return "\n Mala Consecuencia \n       Nombre mala consecuencia:" + this.text + "\n       Niveles:" + Integer.toString(this.levels); 
+    }
+
 }

@@ -20,6 +20,15 @@ package NapakalakiGame;
  *
  * @author nitrosito
  */
-public class DeathBC {
+public class DeathBC extends NumericBC{
+    private boolean death;
     
+    public DeathBC(String text, boolean death){
+        super(text, 0, MAXTREASURES, MAXTREASURES);
+        this.death=death;   
+    }
+    
+    public boolean getDeath(){
+        return death;
+    }
 }
