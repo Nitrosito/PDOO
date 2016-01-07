@@ -33,7 +33,7 @@ public class Player {
        dead=true;
        canISteal=true;
        this.name=name;
-       pendingBadConsequence=new BadConsequence("", 0,0,0);
+       pendingBadConsequence=new NumericBC("", 0,0,0);
        hiddenTreasures= new ArrayList<>();
        visibleTreasures = new ArrayList<>();
    }
