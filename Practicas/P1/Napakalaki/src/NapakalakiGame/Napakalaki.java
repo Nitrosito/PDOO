@@ -26,7 +26,7 @@ public class Napakalaki {
     //Private
     private static final Napakalaki instance = new Napakalaki();
     
-    private Napakalaki(){
+    Napakalaki(){
         currentMonster=null;
         dealer=CardDealer.getInstance();
         currentPlayer=null;
