@@ -55,7 +55,7 @@ public class Player {
        return name;
    }
    
-   protected Player getEnemy(){
+   public Player getEnemy(){
        return enemy;
    }
    
@@ -67,7 +67,7 @@ public class Player {
        dead=false;
    }
    
-   protected int getCombatLevel(){
+   public int getCombatLevel(){
        int combatLevel;
        int bonus=0;
        
