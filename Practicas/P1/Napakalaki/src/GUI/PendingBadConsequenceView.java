@@ -17,6 +17,8 @@
 package GUI;
 
 import NapakalakiGame.BadConsequence;
+import NapakalakiGame.NumericBC;
+import NapakalakiGame.SpecificBC;
 
 /**
  *
@@ -33,6 +35,24 @@ public class PendingBadConsequenceView extends javax.swing.JPanel {
     }
     
     public void setPendingBadConsequence(BadConsequence p){
+        pendiente=p;
+        this.niveles.setText(Integer.toString(pendiente.getLevels()));
+        
+        if(pendiente.getClass() == NumericBC.class){
+          NumericBC myNBC = (NumericBC) pendiente;
+          this.tocultos.setText(Integer.toString(myNBC.getnHiddenTreasures()));
+          this.tvisibles.setText(Integer.toString(myNBC.getnVisibleTreasures()));
+          this.muerte.setText("NO");
+        }
+        else if(pendiente.getClass() == SpecificBC.class){ // SpecificBC
+            SpecificBC mySPBC = (SpecificBC) pendiente;
+            this.muerte.setText("NO");
+
+            //@@TODO
+        }
+        else{ // Muerte
+            this.muerte.setText("SI");
+        }
         
         repaint();
         revalidate();
@@ -49,8 +69,33 @@ public class PendingBadConsequenceView extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        niveles = new javax.swing.JLabel();
+        tvisibles = new javax.swing.JLabel();
+        tocultos = new javax.swing.JLabel();
+        muerte = new javax.swing.JLabel();
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setText("PENDIENTE");
+
+        jLabel2.setText("Niveles:");
+
+        jLabel3.setText("T Visibles:");
+
+        jLabel4.setText("T Ocultos:");
+
+        jLabel5.setText("Muerte:");
+
+        niveles.setText("jLabel6");
+
+        tvisibles.setText("jLabel7");
+
+        tocultos.setText("jLabel8");
+
+        muerte.setText("jLabel9");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -58,20 +103,61 @@ public class PendingBadConsequenceView extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(239, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(niveles))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tvisibles))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tocultos))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(muerte)))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(niveles))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(tvisibles))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(tocultos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(muerte))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel muerte;
+    private javax.swing.JLabel niveles;
+    private javax.swing.JLabel tocultos;
+    private javax.swing.JLabel tvisibles;
     // End of variables declaration//GEN-END:variables
 }

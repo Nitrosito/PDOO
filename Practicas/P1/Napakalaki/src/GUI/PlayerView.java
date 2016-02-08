@@ -16,8 +16,11 @@
  */
 package GUI;
 
+import NapakalakiGame.CultistPlayer;
+import NapakalakiGame.Napakalaki;
 import NapakalakiGame.Player;
 import NapakalakiGame.Treasure;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
@@ -27,6 +30,22 @@ import javax.swing.JPanel;
  */
 public class PlayerView extends javax.swing.JPanel {
     private Player playerModel;
+    private Napakalaki napakalakiModel;
+    
+    public void setNapakalaki(Napakalaki np){
+        napakalakiModel = np;
+    }
+    
+    private ArrayList<Treasure> getSelectedTreasures(JPanel aPanel){
+        TreasureView tv;
+        ArrayList<Treasure> output = new ArrayList();
+        for (Component c : aPanel.getComponents() ){
+            tv=(TreasureView) c;
+            if(tv.isSelected())
+                output.add(tv.getTreasure());
+        }
+        return output;
+    }
     
     public void setPlayer(Player player){
         playerModel = player;
@@ -34,13 +53,14 @@ public class PlayerView extends javax.swing.JPanel {
         this.nivel.setText(Integer.toString(playerModel.getLevels()));
         this.nvcombate.setText(Integer.toString(playerModel.getCombatLevel()));
         this.enemigo.setText(playerModel.getEnemy().toString());
-        if(playerModel.getClass().getName()=="CultistPlayer")
+        if(playerModel.getClass() == CultistPlayer.class)
             this.sectario.setText("SI");
         else
             this.sectario.setText("NO");
         
         this.fillTreasurePanel(visibleTreasures,playerModel.getVisibleTreasures());
         this.fillTreasurePanel(hiddenTreasures,playerModel.getHiddenTreasures());
+        //@@TODO//this.fillTreasurePanel(pendingBadConsequenceView1,playerModel.pendingBadConsequence);
         repaint();
         revalidate();
     }

@@ -17,6 +17,7 @@
 package GUI;
 
 import NapakalakiGame.Treasure;
+import java.awt.Color;
 import sun.org.mozilla.javascript.ScriptRuntime;
 
 /**
@@ -25,6 +26,15 @@ import sun.org.mozilla.javascript.ScriptRuntime;
  */
 public class TreasureView extends javax.swing.JPanel {
      private Treasure treasureModel;
+     private boolean selected = false;
+     
+     public boolean isSelected(){
+         return selected;
+     }
+
+     public Treasure getTreasure(){
+         return treasureModel;
+     }
      
      public void setTreasure(Treasure tesoro){
          treasureModel = tesoro;
@@ -56,6 +66,13 @@ public class TreasureView extends javax.swing.JPanel {
         bonustesoro = new javax.swing.JLabel();
         tipotesoro = new javax.swing.JLabel();
         nombretesoro = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 102));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         jLabel1.setText(" Nombre:");
 
@@ -108,6 +125,15 @@ public class TreasureView extends javax.swing.JPanel {
                 .addContainerGap(207, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        selected = !isSelected();
+        if(selected)
+            setOpaque(true);
+        else
+            setOpaque(false);
+        repaint();
+    }//GEN-LAST:event_formMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
