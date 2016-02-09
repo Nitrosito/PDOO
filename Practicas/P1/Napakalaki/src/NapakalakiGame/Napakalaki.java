@@ -108,7 +108,7 @@ public class Napakalaki {
         }
         dealer.giveMonsterBack(currentMonster);
         return resultadocombate;
-    }
+    }   
     
     public void discardVisibleTreasures(ArrayList<Treasure> treasures){
         for (Treasure treasure: treasures){

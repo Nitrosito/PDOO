@@ -36,6 +36,7 @@ public void setMonster(Monster m){
   prizeView1.setPrize(MonsterModel.getPrize());
   badConsequenceView1.setBadConsequence(MonsterModel.getBadconsequence());
   this.nombre.setText(MonsterModel.getName());
+  this.nivelmonstruo.setText(Integer.toString(MonsterModel.getCombatLevel()));
   repaint();
   revalidate();
 }
@@ -52,10 +53,16 @@ public void setMonster(Monster m){
         badConsequenceView1 = new GUI.BadConsequenceView();
         jLabel1 = new javax.swing.JLabel();
         nombre = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        nivelmonstruo = new javax.swing.JLabel();
 
         jLabel1.setText("Nombre: ");
 
         nombre.setText("jLabel2");
+
+        jLabel2.setText("Nivel Monstruo:");
+
+        nivelmonstruo.setText("jLabel3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -65,9 +72,15 @@ public void setMonster(Monster m){
             .addComponent(badConsequenceView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nivelmonstruo))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,10 +90,14 @@ public void setMonster(Monster m){
                     .addComponent(jLabel1)
                     .addComponent(nombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(nivelmonstruo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(prizeView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(badConsequenceView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(badConsequenceView1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -88,6 +105,8 @@ public void setMonster(Monster m){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.BadConsequenceView badConsequenceView1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel nivelmonstruo;
     private javax.swing.JLabel nombre;
     private GUI.PrizeView prizeView1;
     // End of variables declaration//GEN-END:variables

@@ -34,6 +34,7 @@ public class NapakalakiView extends javax.swing.JFrame {
         nextturn.setVisible(false);
         combat.setEnabled(false);
         playerView1.setPlayer(napakalakiModel.getCurrentPlayer());
+        aviso.setText("");
         repaint();
     }
     /**
@@ -63,6 +64,7 @@ public class NapakalakiView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         resultado = new javax.swing.JLabel();
+        aviso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +99,9 @@ public class NapakalakiView extends javax.swing.JFrame {
 
         resultado.setText(" ");
 
+        aviso.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        aviso.setForeground(new java.awt.Color(255, 51, 51));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -113,17 +118,22 @@ public class NapakalakiView extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(meetmonster)
-                                .addGap(18, 18, 18)
-                                .addComponent(combat, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(meetmonster)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(combat, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(103, 103, 103)
+                                        .addComponent(nextturn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel2)
+                                    .addComponent(monsterView1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(103, 103, 103)
-                                .addComponent(nextturn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2)
-                            .addComponent(monsterView1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(53, 53, 53)
+                                .addComponent(aviso, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,6 +148,8 @@ public class NapakalakiView extends javax.swing.JFrame {
                     .addComponent(combat))
                 .addGap(29, 29, 29)
                 .addComponent(nextturn)
+                .addGap(93, 93, 93)
+                .addComponent(aviso, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -175,10 +187,12 @@ public class NapakalakiView extends javax.swing.JFrame {
             resultado.setText("Has Perdido y te combiertes");
             playerView1.ponerMallRollo(napakalakiModel.getCurrentMonster().getBadconsequence());
         }
-
-
-        else if(res == CombatResult.WINGAME)
+        else if(res == CombatResult.WINGAME){
             resultado.setText("HAS GANADO EL JUEGO");
+            playerView1.setVisible(false);
+            monsterView1.setVisible(false);
+            nextturn.setVisible(false);
+        }
         
         setNapakalaki(napakalakiModel);
         monsterView1.setVisible(true); // quiero quede desplegada vista monstruo
@@ -197,12 +211,15 @@ public class NapakalakiView extends javax.swing.JFrame {
             playerView1.hacervisible(true);
             meetmonster.setEnabled(true);
         }
+        else
+            aviso.setText("ALGO TE TENDRÁS QUE DESCARTAR!");
             
     }//GEN-LAST:event_nextturnActionPerformed
   
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel aviso;
     private javax.swing.JToggleButton combat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
