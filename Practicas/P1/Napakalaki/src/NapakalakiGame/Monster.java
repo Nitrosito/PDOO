@@ -64,5 +64,9 @@ public class Monster {
     public int getTreasuresGained(){
         return prize.getTreasures();
     }
+
+    public Prize getPrize() {
+        return prize;
+    }
 }
 

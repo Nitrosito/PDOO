@@ -66,7 +66,7 @@ public class Napakalaki {
     }
 
     
-    private boolean nextTurnAllowed(){ // #FIXME #PARCHACO #CHAPUZA #PREGUNTAR #TODO
+    public boolean nextTurnAllowed(){
                 if(currentPlayer == null)
             return true;
             

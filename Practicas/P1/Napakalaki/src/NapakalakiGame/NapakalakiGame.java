@@ -26,15 +26,16 @@ import java.util.ArrayList;
  */
 public class NapakalakiGame {
     public static void main(String[] args){
-        Napakalaki game = new Napakalaki();
+        Napakalaki game = Napakalaki.getInstance();
         NapakalakiView napakalakiView = new NapakalakiView();
         Dice.createInstance(napakalakiView);
-        napakalakiView.setNapakalaki(game);
         
         ArrayList<String> names;
         PlayerNamesCapture namesCapture = new PlayerNamesCapture(napakalakiView, true);
         names = namesCapture.getNames();
         game.initGame(names);
+        napakalakiView.setNapakalaki(game);
+
         napakalakiView.setVisible(true);
 
     }

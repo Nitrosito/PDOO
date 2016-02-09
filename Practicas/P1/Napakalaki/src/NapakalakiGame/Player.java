@@ -323,6 +323,10 @@ public ArrayList<Treasure> getVisibleTreasures(){
        
        return false;
    }
+
+    public BadConsequence getPendingBadConsequence() {
+        return pendingBadConsequence;
+    }
    
 
 }

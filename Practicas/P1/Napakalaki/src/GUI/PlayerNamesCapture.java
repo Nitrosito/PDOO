@@ -39,6 +39,8 @@ private ArrayList<String> names = new ArrayList<>();
                 System.exit(0);
             }
         });
+        setLocationRelativeTo(null); // centrar posicion
+
     }
 
     /**

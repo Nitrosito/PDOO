@@ -46,16 +46,17 @@ public class PendingBadConsequenceView extends javax.swing.JPanel {
         }
         else if(pendiente.getClass() == SpecificBC.class){ // SpecificBC
             SpecificBC mySPBC = (SpecificBC) pendiente;
+            this.tocultos.setText(mySPBC.getSpecificHiddenTreasures().toString());
+            this.tvisibles.setText(mySPBC.getSpecificVisibleTreasures().toString());
             this.muerte.setText("NO");
-
-            //@@TODO
         }
         else{ // Muerte
             this.muerte.setText("SI");
+            this.tocultos.setText("");
+            this.tvisibles.setText("");
         }
         
         repaint();
-        revalidate();
         
     }
 
