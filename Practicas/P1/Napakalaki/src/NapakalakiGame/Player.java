@@ -5,6 +5,7 @@
  */
 package NapakalakiGame;
 
+import GUI.Dice;
 import java.util.ArrayList;
 import java.util.Random;
 import static NapakalakiGame.CombatResult.*;
@@ -33,7 +34,7 @@ public class Player {
        dead=true;
        canISteal=true;
        this.name=name;
-       pendingBadConsequence=new BadConsequence("", 0,0,0);
+       pendingBadConsequence=new NumericBC("", 0,0,0);
        hiddenTreasures= new ArrayList<>();
        visibleTreasures = new ArrayList<>();
    }
@@ -54,7 +55,7 @@ public class Player {
        return name;
    }
    
-   protected Player getEnemy(){
+   public Player getEnemy(){
        return enemy;
    }
    
@@ -66,7 +67,7 @@ public class Player {
        dead=false;
    }
    
-   protected int getCombatLevel(){
+   public int getCombatLevel(){
        int combatLevel;
        int bonus=0;
        
@@ -322,6 +323,10 @@ public ArrayList<Treasure> getVisibleTreasures(){
        
        return false;
    }
+
+    public BadConsequence getPendingBadConsequence() {
+        return pendingBadConsequence;
+    }
    
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 nitrosito
+ * Copyright (C) 2016 nitrosito
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,29 +15,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package NapakalakiGame;
-
-import java.util.Random;
+import GUI.Dice;
+import GUI.NapakalakiView;
+import GUI.PlayerNamesCapture;
+import java.util.ArrayList;
 
 /**
  *
  * @author nitrosito
  */
-public class Dice {
-    
-     private static final Dice instance = new Dice();
-     
-      private Dice(){
-     // Aqui va la asignación de valores, etc
-    }
+public class NapakalakiGame {
+    public static void main(String[] args){
+        Napakalaki game = Napakalaki.getInstance();
+        NapakalakiView napakalakiView = new NapakalakiView();
+        Dice.createInstance(napakalakiView);
+        
+        ArrayList<String> names;
+        PlayerNamesCapture namesCapture = new PlayerNamesCapture(napakalakiView, true);
+        names = namesCapture.getNames();
+        game.initGame(names);
+        napakalakiView.setNapakalaki(game);
 
-    public static Dice getInstance(){
-        return instance;
-    }
-    
-    
-    public int nextNumber(){
-        Random rand = new Random();
-        return (rand.nextInt((6 - 1) + 1) + 1);     
-    }
+        napakalakiView.setVisible(true);
 
+    }
 }

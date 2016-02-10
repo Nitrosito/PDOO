@@ -26,7 +26,7 @@ public class Napakalaki {
     //Private
     private static final Napakalaki instance = new Napakalaki();
     
-    private Napakalaki(){
+    Napakalaki(){
         currentMonster=null;
         dealer=CardDealer.getInstance();
         currentPlayer=null;
@@ -66,7 +66,7 @@ public class Napakalaki {
     }
 
     
-    private boolean nextTurnAllowed(){ // #FIXME #PARCHACO #CHAPUZA #PREGUNTAR #TODO
+    public boolean nextTurnAllowed(){
                 if(currentPlayer == null)
             return true;
             
@@ -108,7 +108,7 @@ public class Napakalaki {
         }
         dealer.giveMonsterBack(currentMonster);
         return resultadocombate;
-    }
+    }   
     
     public void discardVisibleTreasures(ArrayList<Treasure> treasures){
         for (Treasure treasure: treasures){
